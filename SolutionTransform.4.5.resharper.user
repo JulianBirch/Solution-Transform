@@ -1,0 +1,529 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="void" priority="21" />
+      <Item value="Console" priority="4" />
+      <Item value="interpreter" priority="11" />
+      <Item value="new" priority="60" />
+      <Item value="public" priority="33" />
+      <Item value="static" priority="6" />
+      <Item value="IRename" priority="0" />
+      <Item value="string" priority="52" />
+      <Item value="return" priority="26" />
+      <Item value="StandardRename" priority="2" />
+      <Item value="DontFilter" priority="0" />
+      <Item value="ITransform" priority="1" />
+      <Item value="RebaseAssemblies" priority="0" />
+      <Item value="basePath" priority="0" />
+      <Item value="relativePath" priority="0" />
+      <Item value="ChangeOutputPaths" priority="0" />
+      <Item value="FilePath" priority="7" />
+      <Item value="relativeOutputPath" priority="0" />
+      <Item value="true" priority="2" />
+      <Item value="false" priority="6" />
+      <Item value="SolutionTransformer" priority="2" />
+      <Item value="using" priority="3" />
+      <Item value="NDesk.Options" priority="0" />
+      <Item value="var" priority="52" />
+      <Item value="OptionSet" priority="2" />
+      <Item value="optionSet" priority="5" />
+      <Item value="Collections" priority="0" />
+      <Item value="IEnumerator" priority="2" />
+      <Item value="foreach" priority="14" />
+      <Item value="IEnumerable" priority="13" />
+      <Item value="set" priority="0" />
+      <Item value="object" priority="13" />
+      <Item value="list" priority="3" />
+      <Item value="int" priority="2" />
+      <Item value="List" priority="8" />
+      <Item value="Version" priority="1" />
+      <Item value="x" priority="2" />
+      <Item value="Option" priority="7" />
+      <Item value="CommandLineParser" priority="2" />
+      <Item value="Boo" priority="0" />
+      <Item value="Lang" priority="0" />
+      <Item value="Interpreter" priority="0" />
+      <Item value="InteractiveInterpreter2" priority="0" />
+      <Item value="interpreter2" priority="0" />
+      <Item value="optionset" priority="6" />
+      <Item value="in" priority="5" />
+      <Item value="options" priority="11" />
+      <Item value="v" priority="6" />
+      <Item value="option" priority="12" />
+      <Item value="if" priority="20" />
+      <Item value="StringComparer" priority="1" />
+      <Item value="else" priority="5" />
+      <Item value="Dictionary" priority="6" />
+      <Item value="Action" priority="2" />
+      <Item value="IDictionary" priority="5" />
+      <Item value="s" priority="5" />
+      <Item value="IFormatProvider" priority="0" />
+      <Item value="ParseCommand" priority="0" />
+      <Item value="Func" priority="1" />
+      <Item value="TResult" priority="2" />
+      <Item value="KeyNotFoundException" priority="0" />
+      <Item value="k" priority="6" />
+      <Item value="evaluate" priority="1" />
+      <Item value="ItemParseCommand" priority="0" />
+      <Item value="actions" priority="1" />
+      <Item value="type" priority="1" />
+      <Item value="result" priority="12" />
+      <Item value="delegate" priority="0" />
+      <Item value="keyValue" priority="1" />
+      <Item value="interface" priority="4" />
+      <Item value="abstract" priority="1" />
+      <Item value="Name" priority="0" />
+      <Item value="internal" priority="1" />
+      <Item value="bool" priority="6" />
+      <Item value="name" priority="8" />
+      <Item value="isList" priority="0" />
+      <Item value="IOption" priority="11" />
+      <Item value="private" priority="1" />
+      <Item value="params" priority="0" />
+      <Item value="args" priority="0" />
+      <Item value="arguments" priority="3" />
+      <Item value="showHelp" priority="1" />
+      <Item value="Exception" priority="0" />
+      <Item value="throw" priority="1" />
+      <Item value="NonErrorTerminationException" priority="1" />
+      <Item value="catch" priority="1" />
+      <Item value="api10" priority="0" />
+      <Item value="try" priority="0" />
+      <Item value="TargetInvocationException" priority="0" />
+      <Item value="ex" priority="0" />
+      <Item value="ISolutionCommand" priority="2" />
+      <Item value="toAdd" priority="2" />
+      <Item value="List&lt;string&gt;" priority="1" />
+      <Item value="toRemove" priority="1" />
+      <Item value="CompositeCommand" priority="0" />
+      <Item value="AddProjectCommand" priority="0" />
+      <Item value="a" priority="0" />
+      <Item value="RemoveProjectCommand" priority="0" />
+      <Item value="r" priority="0" />
+      <Item value="commands" priority="0" />
+      <Item value="null" priority="5" />
+      <Item value="class" priority="8" />
+      <Item value="description" priority="1" />
+      <Item value="isRequired" priority="1" />
+      <Item value="value" priority="0" />
+      <Item value="extendedOptions" priority="1" />
+      <Item value="o" priority="5" />
+      <Item value="argument" priority="4" />
+      <Item value="TextWriter" priority="3" />
+      <Item value="Parameters" priority="0" />
+      <Item value="Dictionary&lt;IOption,bool&gt;" priority="0" />
+      <Item value="lookup" priority="0" />
+      <Item value="out" priority="0" />
+      <Item value="writer" priority="3" />
+      <Item value="ShowHelp" priority="2" />
+      <Item value="currentOption" priority="5" />
+      <Item value="booleanValues" priority="0" />
+      <Item value="values" priority="3" />
+      <Item value="where" priority="0" />
+      <Item value="select" priority="1" />
+      <Item value="missing" priority="0" />
+      <Item value="help" priority="0" />
+      <Item value="TContext" priority="1" />
+      <Item value="Parse" priority="0" />
+      <Item value="parse" priority="0" />
+      <Item value="context" priority="1" />
+      <Item value="enum" priority="0" />
+      <Item value="optionType" priority="3" />
+      <Item value="OptionType" priority="8" />
+      <Item value="BooCommandLineParser" priority="2" />
+      <Item value="commandLineParser" priority="2" />
+      <Item value="this" priority="4" />
+      <Item value="output" priority="1" />
+      <Item value="Dictionary&lt;string,object&gt;" priority="0" />
+      <Item value="variables" priority="1" />
+      <Item value="item" priority="1" />
+      <Item value="Solutions" priority="0" />
+      <Item value="SolutionFile" priority="4" />
+      <Item value="parser" priority="1" />
+      <Item value="Assert" priority="0" />
+      <Item value="solution" priority="0" />
+      <Item value="SolutionSection" priority="1" />
+      <Item value="sectionType" priority="1" />
+      <Item value="ProjectConfigurationPlatforms" priority="0" />
+      <Item value="SolutionChapter" priority="0" />
+      <Item value="solutionChapter" priority="0" />
+      <Item value="GlobalChapter" priority="0" />
+      <Item value="Test" priority="0" />
+      <Item value="filePath" priority="5" />
+      <Item value="document" priority="1" />
+      <Item value="IFileSystem" priority="6" />
+      <Item value="XmlDocument" priority="0" />
+      <Item value="StreamWriter" priority="0" />
+      <Item value="lines" priority="1" />
+      <Item value="line" priority="0" />
+      <Item value="fileSystem" priority="8" />
+      <Item value="XmlFile" priority="0" />
+      <Item value="xmlFile" priority="1" />
+      <Item value="SolutionFileParser" priority="0" />
+      <Item value="ApiMacro" priority="0" />
+      <Item value="DepthFirstTransformer" priority="0" />
+      <Item value="WithExpander" priority="1" />
+      <Item value="override" priority="1" />
+      <Item value="transformer" priority="0" />
+      <Item value="macro" priority="5" />
+      <Item value="HashSet" priority="0" />
+      <Item value="HashSet&lt;string&gt;" priority="0" />
+      <Item value="keywords" priority="2" />
+      <Item value="instance" priority="2" />
+      <Item value="BindingFlags" priority="0" />
+      <Item value="method" priority="0" />
+      <Item value="node" priority="3" />
+      <Item value="MemberReferenceExpression" priority="0" />
+      <Item value="ReferenceExpression" priority="0" />
+      <Item value="m" priority="0" />
+      <Item value="ReplaceCurrentNode" priority="0" />
+      <Item value="FileSystem" priority="1" />
+      <Item value="lastSolution" priority="0" />
+      <Item value="Block" priority="0" />
+      <Item value="statement" priority="1" />
+      <Item value="as" priority="0" />
+      <Item value="TypeReference" priority="1" />
+      <Item value="TypeofExpression" priority="1" />
+      <Item value="typeofExpression" priority="0" />
+      <Item value="Api" priority="1" />
+      <Item value="standardRename" priority="0" />
+      <Item value="ToList" priority="0" />
+      <Item value="modified" priority="1" />
+      <Item value="rename" priority="0" />
+      <Item value="SyncFromCommand" priority="1" />
+      <Item value="TValue" priority="5" />
+      <Item value="KeyValuePair" priority="0" />
+      <Item value="List&lt;KeyValuePair&lt;TValue,TValue&gt;&gt;" priority="0" />
+      <Item value="List&lt;TValue&gt;" priority="1" />
+      <Item value="Reconciliation" priority="1" />
+      <Item value="fromProject" priority="2" />
+      <Item value="isMatch" priority="0" />
+      <Item value="toProject" priority="1" />
+      <Item value="matched" priority="2" />
+      <Item value="KeyValuePair&lt;TValue,TValue&gt;" priority="0" />
+      <Item value="removed" priority="1" />
+      <Item value="from" priority="3" />
+      <Item value="added" priority="0" />
+      <Item value="to" priority="2" />
+      <Item value="matchedTo" priority="0" />
+      <Item value="propg" priority="0" />
+      <Item value="reconciliation" priority="1" />
+      <Item value="toSolution" priority="2" />
+      <Item value="fromSolution" priority="2" />
+      <Item value="SolutionProject" priority="2" />
+      <Item value="project" priority="2" />
+      <Item value="Path" priority="0" />
+      <Item value="index" priority="2" />
+      <Item value="f" priority="0" />
+      <Item value="projectPair" priority="0" />
+      <Item value="path" priority="0" />
+      <Item value="newSolutionPath" priority="0" />
+      <Item value="solutionTransformer" priority="0" />
+      <Item value="solutionFrom" priority="0" />
+      <Item value="solutionFile" priority="0" />
+      <Item value="replacement" priority="0" />
+      <Item value="protected" priority="1" />
+      <Item value="virtual" priority="0" />
+      <Item value="Program" priority="0" />
+      <Item value="invalid" priority="0" />
+      <Item value="IEqualityComparer" priority="0" />
+      <Item value="BareName" priority="0" />
+      <Item value="obj" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine" priority="2" />
+      <Item value="Out" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Interpreter.InteractiveInterpreter2">
+      <Item value="SetValue" priority="3" />
+      <Item value="DisplayLogo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.SolutionTransformer">
+      <Item value="BasePath" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NDesk.Options.OptionSet">
+      <Item value="Add" priority="4" />
+      <Item value="Parse" priority="2" />
+      <Item value="WriteOptionDescriptions" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList" priority="2" />
+      <Item value="Union" priority="0" />
+      <Item value="ToDictionary" priority="0" />
+      <Item value="Any" priority="1" />
+      <Item value="Where" priority="0" />
+      <Item value="FirstOrDefault" priority="0" />
+      <Item value="Except" priority="0" />
+      <Item value="Distinct" priority="0" />
+      <Item value="Select" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.List`1">
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.StringComparer">
+      <Item value="InvariantCultureIgnoreCase" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.StringComparer">
+      <Item value="Equals" priority="1" />
+      <Item value="Compare" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IDictionary`2">
+      <Item value="ContainsKey" priority="2" />
+      <Item value="Keys" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="ContainsKey" priority="0" />
+      <Item value="TryGetValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
+      <Item value="Key" priority="2" />
+      <Item value="Value" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.IOption">
+      <Item value="Add" priority="0" />
+      <Item value="Name" priority="3" />
+      <Item value="HasValues" priority="2" />
+      <Item value="Description" priority="0" />
+      <Item value="IsRequired" priority="0" />
+      <Item value="OptionType" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.CommandLineParser">
+      <Item value="Parameters" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.TargetInvocationException">
+      <Item value="InnerException" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Select" priority="2" />
+      <Item value="AddRange" priority="1" />
+      <Item value="Count" priority="0" />
+      <Item value="Add" priority="2" />
+      <Item value="Insert" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="StartsWith" priority="0" />
+      <Item value="Substring" priority="0" />
+      <Item value="Length" priority="1" />
+      <Item value="AsLines" priority="0" />
+      <Item value="IndexOf" priority="0" />
+      <Item value="GetHashCode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="WriteLine" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@SolutionTransform.Api10.OptionType">
+      <Item value="NoValues" priority="3" />
+      <Item value="OneValue" priority="2" />
+      <Item value="MultipleValues" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.ICollection`1">
+      <Item value="OfType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.IOption`1">
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.SolutionFileParser">
+      <Item value="Equals" priority="0" />
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="IsNotNull" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.SolutionFile">
+      <Item value="Globals" priority="0" />
+      <Item value="Projects" priority="4" />
+      <Item value="Remove" priority="1" />
+      <Item value="Add" priority="0" />
+      <Item value="FullPath" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.GlobalChapter">
+      <Item value="ProjectConfigurationPlatforms" priority="0" />
+      <Item value="SolutionConfigurationPlatforms" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Concat" priority="0" />
+      <Item value="IsNullOrEmpty" priority="1" />
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.FilePath">
+      <Item value="Path" priority="3" />
+      <Item value="PathFrom" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlDocument">
+      <Item value="Load" priority="0" />
+      <Item value="Save" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="Write" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.IFileSystem">
+      <Item value="LoadAsDocument" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.WithMacro+WithExpander">
+      <Item value="Visit" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.Ast.MacroStatement">
+      <Item value="Block" priority="1" />
+      <Item value="Body" priority="3" />
+      <Item value="LexicalInfo" priority="0" />
+      <Item value="Arguments" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetMethods" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection.BindingFlags">
+      <Item value="Instance" priority="0" />
+      <Item value="Public" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.HashSet`1">
+      <Item value="Add" priority="0" />
+      <Item value="Contains" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MethodInfo">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.Ast.ReferenceExpression">
+      <Item value="Name" priority="1" />
+      <Item value="LexicalInfo" priority="1" />
+      <Item value="ExpressionType" priority="0" />
+      <Item value="CloneNode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.Ast.MemberReferenceExpression">
+      <Item value="Name" priority="0" />
+      <Item value="Target" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.TypeSystem.IType">
+      <Item value="GetMembers" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.TypeSystem.IEntity">
+      <Item value="EntityType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Boo.Lang.Compiler.TypeSystem.EntityType">
+      <Item value="Method" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.Ast.Block">
+      <Item value="Insert" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Boo.Lang.Compiler.Ast.TypeofExpression">
+      <Item value="Type" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Tests.FakeFileSystem">
+      <Item value="Save" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.BooCommandLineParser">
+      <Item value="Parameters" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.Reconciliation`1">
+      <Item value="Reconcile" priority="0" />
+      <Item value="Removed" priority="1" />
+      <Item value="Added" priority="1" />
+      <Item value="Matched" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.SolutionProject">
+      <Item value="Path" priority="0" />
+      <Item value="Rebase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetFileNameWithoutExtension" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.XmlFile">
+      <Item value="Path" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Api10.StandardRename">
+      <Item value="replacement" priority="1" />
+      <Item value="delimiter" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@SolutionTransform.Program">
+      <Item value="Main" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.BaseMergeCommand+BareNameEqualityComparer">
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:RenameTests.cs" caret="202" fromTop="8" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:ConvertAssemblyToProject.cs" caret="2136" fromTop="40" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:CompositeCommand.cs" caret="406" fromTop="13" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:FileSystem/f:NonErrorTerminationException.cs" caret="123" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:FilePath.cs" caret="399" fromTop="7" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:FileSystem/f:IFileSystem.cs" caret="224" fromTop="8" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:FileSystem/f:FileSystem.cs" caret="119" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:XmlFile.cs" caret="617" fromTop="22" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFileParser.cs" caret="1186" fromTop="22" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="167" fromTop="6" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:TargetTests.cs" caret="28228" fromTop="15" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:WithMacro.cs" caret="637" fromTop="14" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:RemoveProjectCommand.cs" caret="150" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionChapter.cs" caret="116" fromTop="5" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionProject.cs" caret="1941" fromTop="24" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Modify.boo" caret="377" fromTop="12" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="752" fromTop="21" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:CastleSilverlight.boo" caret="332" fromTop="11" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:ReadMe.txt" caret="260" fromTop="8" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2396" fromTop="11" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:SolutionTransformer.cs" caret="2247" fromTop="9" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="380" fromTop="11" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="157" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:TextReaderHelper.cs" caret="1217" fromTop="27" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="1894" fromTop="16" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Option.cs" caret="679" fromTop="19" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:CommandLineParser.cs" caret="1190" fromTop="16" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:QuickTests.cs" caret="210" fromTop="9" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="764" fromTop="12" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:Program.cs" caret="2543" fromTop="13" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="204" fromTop="10" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:SolutionTransformer.cs" caret="3367" fromTop="26" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="815" fromTop="22" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1931" fromTop="17" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1751" fromTop="27" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2740" fromTop="29" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2662" fromTop="12" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="3865" fromTop="11" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:CommandLineParser.cs" caret="4187" fromTop="21" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:CommandLineParser.cs" caret="4464" fromTop="27" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:ReadMe.txt" caret="123" fromTop="5" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:ReadMe.txt" caret="260" fromTop="8" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="229" fromTop="11" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="471" fromTop="16" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1430" fromTop="17" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1288" fromTop="21" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="424" fromTop="11" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="544" fromTop="15" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="740" fromTop="19" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1896" fromTop="20" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2441" fromTop="18" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="7714" fromTop="15" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="456" fromTop="15" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="162" fromTop="6" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="380" fromTop="11" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="172" fromTop="7" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="3969" fromTop="12" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:QuickTests.cs" caret="551" fromTop="16" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="1844" fromTop="18" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="1032" fromTop="18" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+</Configuration>

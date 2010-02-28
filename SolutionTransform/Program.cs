@@ -26,8 +26,6 @@ namespace SolutionTransform {
 	using System;
 
 	public class Program {
-        
-
         public static FilePath FullPath(string file)
         {
             if (file.Contains("\\"))
@@ -72,27 +70,31 @@ namespace SolutionTransform {
             return new FilePath(result.Substring(6), true);
         }
 
-        
-		public static int Main(string[] args)
-		{
-		    if (args.Length == 0) {
-				Console.WriteLine("Usage:\tSolutionTransform <Script Name or Path> <Other Arguments>");
+        public static int Main(IFileSystem fileSystem, string[] args)
+        {
+            if (args.Length == 0) {
+                Console.WriteLine("Usage:\tSolutionTransform <Script Name or Path> <Other Arguments>");
                 Console.WriteLine("\t\tSolutionTransform <Script Name or Path> --help");
                 Console.WriteLine("\t\t\tfor script argument help");
                 Console.WriteLine("\t\t\tNote that paths nearly always have to be absolute.");
                 return 0;
-			}
-		    return ExecuteScript(args);
+            }
+            return ExecuteScript(fileSystem, args);
+        }
+
+	    public static int Main(string[] args)
+		{
+            return Main(new FileSystem(), args);
 		}
 
-	    private static int ExecuteScript(string[] args)
+        private static int ExecuteScript(IFileSystem fileSystem, string[] args)
 	    {
 	        try
 	        {
 	            var interpreter = new Boo.Lang.Interpreter.InteractiveInterpreter2();
                 
                 var parser = new BooCommandLineParser(interpreter, args);
-                var api10 = new Api(parser, new FileSystem());
+                var api10 = new Api(parser, fileSystem);
 	            // api10.Parameters();
                     
 	            interpreter.SetValue("api10", api10);
@@ -145,7 +147,6 @@ namespace SolutionTransform {
                 writer.WriteLine("======");
                 WriteException(writer, inner);
             }
-            
         }
 	}
 }

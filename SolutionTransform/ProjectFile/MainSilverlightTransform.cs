@@ -22,12 +22,8 @@ namespace SolutionTransform.ProjectFile
 	{
 		public override void DoApplyTransform(XmlDocument document) {
 			base.DoApplyTransform(document);
-			var rootPropertyGroup = document.SelectSingleNode("/*/x:PropertyGroup[not(@Condition)]", namespaces);
-			if (rootPropertyGroup == null)
-			{
-				throw new Exception("Couldn't find root property group.");
-			}
-			Delete(rootPropertyGroup, "x:FileAlignment");
+			XmlNode rootPropertyGroup = GetRootPropertyGroup(document);
+		    Delete(rootPropertyGroup, "x:FileAlignment");
 			SetElement(rootPropertyGroup, "SilverlightApplication", false);
 			SetElement(rootPropertyGroup, "ValidateXaml", true);
 			SetElement(rootPropertyGroup, "ThrowErrorsInValidation", true);

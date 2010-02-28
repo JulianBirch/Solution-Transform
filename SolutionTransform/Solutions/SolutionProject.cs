@@ -134,5 +134,13 @@ namespace SolutionTransform.Solutions
         {
             return other.Id == Id;
         }
+
+        public override bool Equals(object obj) {
+            return Equals(obj as SolutionProject);
+        }
+
+        public override int GetHashCode() {
+            return Id.GetHashCode();
+        }
     }
 }

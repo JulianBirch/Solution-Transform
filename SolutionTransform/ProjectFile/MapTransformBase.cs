@@ -57,8 +57,8 @@ namespace SolutionTransform.ProjectFile
 
 		public override void DoApplyTransform(XmlDocument document)
 		{
-			var source = document.SelectNodes("/*//x:Reference[@Include]", namespaces);
-			foreach (XmlElement reference in source)
+		    XmlNodeList source = GetAssemblyReferences(document);
+		    foreach (XmlElement reference in source)
 			{
                 var original = GetAssemblyName(reference.GetAttribute("Include"));
 				if (map.ContainsKey(original))  // Only change if registered
@@ -82,17 +82,21 @@ namespace SolutionTransform.ProjectFile
                             // This might be a bit too special case, but I think the code should
                             // stand until a better test case is encountered.
                             foreach (var item in replacement) {
-                                var element = reference.OwnerDocument.CreateElement(reference.Name, reference.NamespaceURI);
-                                element.SetAttribute("Include", item);
-                                reference.ParentNode.InsertAfter(element, reference);
+                                AddReference(reference, item);
                             }
                             Delete(reference);
                             break;
                     }
-
-					
 				}
 			}
 		}
+
+	    public static XmlElement AddReference(XmlElement reference, string assemblyName)
+        {
+            var element = reference.OwnerDocument.CreateElement(reference.Name, reference.NamespaceURI);
+            element.SetAttribute("Include", assemblyName);
+            reference.ParentNode.InsertAfter(element, reference);
+            return element;
+        }
 	}
 }

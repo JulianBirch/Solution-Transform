@@ -91,6 +91,11 @@ namespace SolutionTransform
             }
         }
 
+        internal bool IsAbsolute
+        {
+            get { return isAbsolute; }
+        }
+
         static string WorkOutRelativePath(string from, string to, int directoriesUp) {
             var match = Regex.Match(to, Regex.Escape(from));
             if (match == Match.Empty) {
@@ -109,6 +114,18 @@ namespace SolutionTransform
             return other.isDirectory == isDirectory
                 && other.isAbsolute == isAbsolute
                 && StringComparer.InvariantCultureIgnoreCase.Equals(other.path, path);
+        }
+
+        public override bool Equals(object obj) {
+            return base.Equals((FilePath) obj);
+        }
+
+        public override int GetHashCode() {
+            return unchecked(
+                isDirectory ? 3 : 0
+                + (isAbsolute ? 7 : 0)
+                + 13 * StringComparer.InvariantCultureIgnoreCase.GetHashCode(path)
+                );
         }
     }
 }

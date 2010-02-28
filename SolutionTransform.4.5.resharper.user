@@ -12,44 +12,44 @@
   </NAntValidationSettings>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="void" priority="21" />
+      <Item value="void" priority="25" />
       <Item value="Console" priority="4" />
       <Item value="interpreter" priority="11" />
-      <Item value="new" priority="60" />
-      <Item value="public" priority="33" />
-      <Item value="static" priority="6" />
+      <Item value="new" priority="76" />
+      <Item value="public" priority="50" />
+      <Item value="static" priority="9" />
       <Item value="IRename" priority="0" />
-      <Item value="string" priority="52" />
-      <Item value="return" priority="26" />
+      <Item value="string" priority="73" />
+      <Item value="return" priority="39" />
       <Item value="StandardRename" priority="2" />
       <Item value="DontFilter" priority="0" />
-      <Item value="ITransform" priority="1" />
+      <Item value="ITransform" priority="5" />
       <Item value="RebaseAssemblies" priority="0" />
       <Item value="basePath" priority="0" />
       <Item value="relativePath" priority="0" />
       <Item value="ChangeOutputPaths" priority="0" />
-      <Item value="FilePath" priority="7" />
+      <Item value="FilePath" priority="13" />
       <Item value="relativeOutputPath" priority="0" />
-      <Item value="true" priority="2" />
-      <Item value="false" priority="6" />
+      <Item value="true" priority="3" />
+      <Item value="false" priority="11" />
       <Item value="SolutionTransformer" priority="2" />
       <Item value="using" priority="3" />
       <Item value="NDesk.Options" priority="0" />
-      <Item value="var" priority="52" />
+      <Item value="var" priority="73" />
       <Item value="OptionSet" priority="2" />
       <Item value="optionSet" priority="5" />
       <Item value="Collections" priority="0" />
       <Item value="IEnumerator" priority="2" />
-      <Item value="foreach" priority="14" />
-      <Item value="IEnumerable" priority="13" />
+      <Item value="foreach" priority="15" />
+      <Item value="IEnumerable" priority="14" />
       <Item value="set" priority="0" />
       <Item value="object" priority="13" />
       <Item value="list" priority="3" />
-      <Item value="int" priority="2" />
-      <Item value="List" priority="8" />
+      <Item value="int" priority="3" />
+      <Item value="List" priority="10" />
       <Item value="Version" priority="1" />
-      <Item value="x" priority="2" />
-      <Item value="Option" priority="7" />
+      <Item value="x" priority="3" />
+      <Item value="Option" priority="8" />
       <Item value="CommandLineParser" priority="2" />
       <Item value="Boo" priority="0" />
       <Item value="Lang" priority="0" />
@@ -59,12 +59,12 @@
       <Item value="optionset" priority="6" />
       <Item value="in" priority="5" />
       <Item value="options" priority="11" />
-      <Item value="v" priority="6" />
+      <Item value="v" priority="7" />
       <Item value="option" priority="12" />
-      <Item value="if" priority="20" />
-      <Item value="StringComparer" priority="1" />
+      <Item value="if" priority="27" />
+      <Item value="StringComparer" priority="3" />
       <Item value="else" priority="5" />
-      <Item value="Dictionary" priority="6" />
+      <Item value="Dictionary" priority="8" />
       <Item value="Action" priority="2" />
       <Item value="IDictionary" priority="5" />
       <Item value="s" priority="5" />
@@ -78,31 +78,31 @@
       <Item value="ItemParseCommand" priority="0" />
       <Item value="actions" priority="1" />
       <Item value="type" priority="1" />
-      <Item value="result" priority="12" />
+      <Item value="result" priority="16" />
       <Item value="delegate" priority="0" />
       <Item value="keyValue" priority="1" />
       <Item value="interface" priority="4" />
       <Item value="abstract" priority="1" />
       <Item value="Name" priority="0" />
-      <Item value="internal" priority="1" />
+      <Item value="internal" priority="2" />
       <Item value="bool" priority="6" />
-      <Item value="name" priority="8" />
+      <Item value="name" priority="9" />
       <Item value="isList" priority="0" />
       <Item value="IOption" priority="11" />
       <Item value="private" priority="1" />
       <Item value="params" priority="0" />
-      <Item value="args" priority="0" />
+      <Item value="args" priority="1" />
       <Item value="arguments" priority="3" />
       <Item value="showHelp" priority="1" />
       <Item value="Exception" priority="0" />
-      <Item value="throw" priority="1" />
+      <Item value="throw" priority="3" />
       <Item value="NonErrorTerminationException" priority="1" />
       <Item value="catch" priority="1" />
       <Item value="api10" priority="0" />
       <Item value="try" priority="0" />
       <Item value="TargetInvocationException" priority="0" />
       <Item value="ex" priority="0" />
-      <Item value="ISolutionCommand" priority="2" />
+      <Item value="ISolutionCommand" priority="6" />
       <Item value="toAdd" priority="2" />
       <Item value="List&lt;string&gt;" priority="1" />
       <Item value="toRemove" priority="1" />
@@ -112,11 +112,11 @@
       <Item value="RemoveProjectCommand" priority="0" />
       <Item value="r" priority="0" />
       <Item value="commands" priority="0" />
-      <Item value="null" priority="5" />
-      <Item value="class" priority="8" />
+      <Item value="null" priority="6" />
+      <Item value="class" priority="16" />
       <Item value="description" priority="1" />
       <Item value="isRequired" priority="1" />
-      <Item value="value" priority="0" />
+      <Item value="value" priority="1" />
       <Item value="extendedOptions" priority="1" />
       <Item value="o" priority="5" />
       <Item value="argument" priority="4" />
@@ -124,14 +124,14 @@
       <Item value="Parameters" priority="0" />
       <Item value="Dictionary&lt;IOption,bool&gt;" priority="0" />
       <Item value="lookup" priority="0" />
-      <Item value="out" priority="0" />
+      <Item value="out" priority="1" />
       <Item value="writer" priority="3" />
       <Item value="ShowHelp" priority="2" />
       <Item value="currentOption" priority="5" />
       <Item value="booleanValues" priority="0" />
       <Item value="values" priority="3" />
-      <Item value="where" priority="0" />
-      <Item value="select" priority="1" />
+      <Item value="where" priority="1" />
+      <Item value="select" priority="2" />
       <Item value="missing" priority="0" />
       <Item value="help" priority="0" />
       <Item value="TContext" priority="1" />
@@ -140,19 +140,19 @@
       <Item value="context" priority="1" />
       <Item value="enum" priority="0" />
       <Item value="optionType" priority="3" />
-      <Item value="OptionType" priority="8" />
+      <Item value="OptionType" priority="9" />
       <Item value="BooCommandLineParser" priority="2" />
       <Item value="commandLineParser" priority="2" />
       <Item value="this" priority="4" />
       <Item value="output" priority="1" />
       <Item value="Dictionary&lt;string,object&gt;" priority="0" />
       <Item value="variables" priority="1" />
-      <Item value="item" priority="1" />
+      <Item value="item" priority="2" />
       <Item value="Solutions" priority="0" />
       <Item value="SolutionFile" priority="4" />
       <Item value="parser" priority="1" />
-      <Item value="Assert" priority="0" />
-      <Item value="solution" priority="0" />
+      <Item value="Assert" priority="2" />
+      <Item value="solution" priority="2" />
       <Item value="SolutionSection" priority="1" />
       <Item value="sectionType" priority="1" />
       <Item value="ProjectConfigurationPlatforms" priority="0" />
@@ -160,21 +160,21 @@
       <Item value="solutionChapter" priority="0" />
       <Item value="GlobalChapter" priority="0" />
       <Item value="Test" priority="0" />
-      <Item value="filePath" priority="5" />
-      <Item value="document" priority="1" />
-      <Item value="IFileSystem" priority="6" />
-      <Item value="XmlDocument" priority="0" />
+      <Item value="filePath" priority="22" />
+      <Item value="document" priority="8" />
+      <Item value="IFileSystem" priority="8" />
+      <Item value="XmlDocument" priority="3" />
       <Item value="StreamWriter" priority="0" />
-      <Item value="lines" priority="1" />
+      <Item value="lines" priority="3" />
       <Item value="line" priority="0" />
-      <Item value="fileSystem" priority="8" />
+      <Item value="fileSystem" priority="16" />
       <Item value="XmlFile" priority="0" />
       <Item value="xmlFile" priority="1" />
       <Item value="SolutionFileParser" priority="0" />
       <Item value="ApiMacro" priority="0" />
       <Item value="DepthFirstTransformer" priority="0" />
       <Item value="WithExpander" priority="1" />
-      <Item value="override" priority="1" />
+      <Item value="override" priority="7" />
       <Item value="transformer" priority="0" />
       <Item value="macro" priority="5" />
       <Item value="HashSet" priority="0" />
@@ -188,11 +188,11 @@
       <Item value="ReferenceExpression" priority="0" />
       <Item value="m" priority="0" />
       <Item value="ReplaceCurrentNode" priority="0" />
-      <Item value="FileSystem" priority="1" />
+      <Item value="FileSystem" priority="3" />
       <Item value="lastSolution" priority="0" />
       <Item value="Block" priority="0" />
       <Item value="statement" priority="1" />
-      <Item value="as" priority="0" />
+      <Item value="as" priority="1" />
       <Item value="TypeReference" priority="1" />
       <Item value="TypeofExpression" priority="1" />
       <Item value="typeofExpression" priority="0" />
@@ -213,33 +213,102 @@
       <Item value="matched" priority="2" />
       <Item value="KeyValuePair&lt;TValue,TValue&gt;" priority="0" />
       <Item value="removed" priority="1" />
-      <Item value="from" priority="3" />
+      <Item value="from" priority="4" />
       <Item value="added" priority="0" />
-      <Item value="to" priority="2" />
+      <Item value="to" priority="3" />
       <Item value="matchedTo" priority="0" />
       <Item value="propg" priority="0" />
       <Item value="reconciliation" priority="1" />
       <Item value="toSolution" priority="2" />
       <Item value="fromSolution" priority="2" />
-      <Item value="SolutionProject" priority="2" />
+      <Item value="SolutionProject" priority="4" />
       <Item value="project" priority="2" />
-      <Item value="Path" priority="0" />
-      <Item value="index" priority="2" />
+      <Item value="Path" priority="1" />
+      <Item value="index" priority="4" />
       <Item value="f" priority="0" />
       <Item value="projectPair" priority="0" />
-      <Item value="path" priority="0" />
+      <Item value="path" priority="3" />
       <Item value="newSolutionPath" priority="0" />
       <Item value="solutionTransformer" priority="0" />
       <Item value="solutionFrom" priority="0" />
-      <Item value="solutionFile" priority="0" />
+      <Item value="solutionFile" priority="3" />
       <Item value="replacement" priority="0" />
       <Item value="protected" priority="1" />
-      <Item value="virtual" priority="0" />
+      <Item value="virtual" priority="2" />
       <Item value="Program" priority="0" />
       <Item value="invalid" priority="0" />
       <Item value="IEqualityComparer" priority="0" />
       <Item value="BareName" priority="0" />
       <Item value="obj" priority="0" />
+      <Item value="File" priority="0" />
+      <Item value="FileInfo" priority="0" />
+      <Item value="info" priority="0" />
+      <Item value="toWithExtension" priority="0" />
+      <Item value="destination" priority="1" />
+      <Item value="Lines" priority="0" />
+      <Item value="assemblyPaths" priority="1" />
+      <Item value="Length" priority="0" />
+      <Item value="relativePaths" priority="0" />
+      <Item value="MSBuild2003Transform" priority="2" />
+      <Item value="NullTransform" priority="0" />
+      <Item value="ChangeFrameworkVersion" priority="3" />
+      <Item value="XmlElement" priority="4" />
+      <Item value="namespaces" priority="1" />
+      <Item value="element" priority="1" />
+      <Item value="newVersion" priority="0" />
+      <Item value="ctor" priority="2" />
+      <Item value="base" priority="0" />
+      <Item value="assemblyName" priority="0" />
+      <Item value="references" priority="0" />
+      <Item value="ReferenceMapTransform" priority="0" />
+      <Item value="first" priority="0" />
+      <Item value="CsharpTarget" priority="0" />
+      <Item value="ChangeTo40Framework" priority="0" />
+      <Item value="root" priority="0" />
+      <Item value="toolsVersion" priority="1" />
+      <Item value="GetRootPropertyGroup" priority="0" />
+      <Item value="rootPG" priority="0" />
+      <Item value="productVersionElement" priority="0" />
+      <Item value="productVersion" priority="1" />
+      <Item value="ChangeVisualStudioVersionCommand" priority="1" />
+      <Item value="preamble" priority="2" />
+      <Item value="Dictionary&lt;string,ITransform&gt;" priority="0" />
+      <Item value="Silverlight30Transform" priority="0" />
+      <Item value="targets" priority="1" />
+      <Item value="target" priority="1" />
+      <Item value="ArgumentException" priority="0" />
+      <Item value="ToVisualStudio2008" priority="0" />
+      <Item value="file" priority="2" />
+      <Item value="ChangeVisualStudioVersion" priority="0" />
+      <Item value="TransformCommand" priority="2" />
+      <Item value="AddDefineConstant" priority="0" />
+      <Item value="RemoveDefineConstant" priority="0" />
+      <Item value="transforms" priority="1" />
+      <Item value="CompositeTransform" priority="0" />
+      <Item value="solutions" priority="2" />
+      <Item value="projects" priority="2" />
+      <Item value="Dictionary&lt;FilePath,IEnumerable&lt;string&gt;&gt;" priority="0" />
+      <Item value="isAbsolute" priority="1" />
+      <Item value="solutionPath" priority="0" />
+      <Item value="ArgumentNullException" priority="0" />
+      <Item value="Main" priority="0" />
+      <Item value="FakeFileSystem" priority="1" />
+      <Item value="ExampleCsprojFiles" priority="0" />
+      <Item value="roundTripped" priority="4" />
+      <Item value="Is" priority="2" />
+      <Item value="iocSolutionJan2010" priority="0" />
+      <Item value="ToSolutionString" priority="0" />
+      <Item value="unchecked" priority="0" />
+      <Item value="isDirectory" priority="0" />
+      <Item value="projectCount" priority="0" />
+      <Item value="originalLines" priority="0" />
+      <Item value="chapters" priority="0" />
+      <Item value="Projects" priority="0" />
+      <Item value="c" priority="1" />
+      <Item value="is" priority="0" />
+      <Item value="l" priority="0" />
+      <Item value="Id" priority="0" />
+      <Item value="csproj" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Console">
       <Item value="WriteLine" priority="2" />
@@ -258,7 +327,7 @@
       <Item value="WriteOptionDescriptions" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
-      <Item value="ToList" priority="2" />
+      <Item value="ToList" priority="3" />
       <Item value="Union" priority="0" />
       <Item value="ToDictionary" priority="0" />
       <Item value="Any" priority="1" />
@@ -267,24 +336,28 @@
       <Item value="Except" priority="0" />
       <Item value="Distinct" priority="0" />
       <Item value="Select" priority="1" />
+      <Item value="Last" priority="0" />
+      <Item value="Count" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Boo.Lang.List`1">
       <Item value="Add" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.StringComparer">
-      <Item value="InvariantCultureIgnoreCase" priority="1" />
+      <Item value="InvariantCultureIgnoreCase" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.StringComparer">
-      <Item value="Equals" priority="1" />
+      <Item value="Equals" priority="2" />
       <Item value="Compare" priority="0" />
+      <Item value="GetHashCode" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IDictionary`2">
       <Item value="ContainsKey" priority="2" />
       <Item value="Keys" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
-      <Item value="ContainsKey" priority="0" />
+      <Item value="ContainsKey" priority="1" />
       <Item value="TryGetValue" priority="0" />
+      <Item value="Keys" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
       <Item value="Key" priority="2" />
@@ -306,18 +379,21 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Select" priority="2" />
-      <Item value="AddRange" priority="1" />
-      <Item value="Count" priority="0" />
+      <Item value="AddRange" priority="2" />
+      <Item value="Count" priority="1" />
       <Item value="Add" priority="2" />
       <Item value="Insert" priority="0" />
+      <Item value="ToArray" priority="0" />
+      <Item value="Except" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="StartsWith" priority="0" />
-      <Item value="Substring" priority="0" />
-      <Item value="Length" priority="1" />
-      <Item value="AsLines" priority="0" />
+      <Item value="Substring" priority="2" />
+      <Item value="Length" priority="2" />
+      <Item value="AsLines" priority="1" />
       <Item value="IndexOf" priority="0" />
       <Item value="GetHashCode" priority="0" />
+      <Item value="LastIndexOf" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.TextWriter">
       <Item value="WriteLine" priority="1" />
@@ -325,7 +401,7 @@
     <ItemStatistics item="Qualified:@SolutionTransform.Api10.OptionType">
       <Item value="NoValues" priority="3" />
       <Item value="OneValue" priority="2" />
-      <Item value="MultipleValues" priority="1" />
+      <Item value="MultipleValues" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.ICollection`1">
       <Item value="OfType" priority="0" />
@@ -339,13 +415,15 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
       <Item value="IsNotNull" priority="0" />
+      <Item value="That" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.Solutions.SolutionFile">
       <Item value="Globals" priority="0" />
-      <Item value="Projects" priority="4" />
+      <Item value="Projects" priority="6" />
       <Item value="Remove" priority="1" />
       <Item value="Add" priority="0" />
       <Item value="FullPath" priority="0" />
+      <Item value="Lines" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.Solutions.GlobalChapter">
       <Item value="ProjectConfigurationPlatforms" priority="0" />
@@ -355,20 +433,31 @@
       <Item value="Concat" priority="0" />
       <Item value="IsNullOrEmpty" priority="1" />
       <Item value="Empty" priority="0" />
+      <Item value="Format" priority="0" />
+      <Item value="Join" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.FilePath">
-      <Item value="Path" priority="3" />
+      <Item value="Path" priority="5" />
       <Item value="PathFrom" priority="0" />
+      <Item value="Parent" priority="0" />
+      <Item value="File" priority="0" />
+      <Item value="IsDirectory" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Xml.XmlDocument">
       <Item value="Load" priority="0" />
       <Item value="Save" priority="0" />
+      <Item value="SelectNodes" priority="0" />
+      <Item value="SelectSingleNode" priority="0" />
+      <Item value="DocumentElement" priority="2" />
+      <Item value="LoadXml" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.StreamWriter">
       <Item value="Write" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.IFileSystem">
       <Item value="LoadAsDocument" priority="0" />
+      <Item value="Save" priority="1" />
+      <Item value="LoadAsLines" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.Api10.WithMacro+WithExpander">
       <Item value="Visit" priority="0" />
@@ -422,7 +511,7 @@
       <Item value="Type" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.Tests.FakeFileSystem">
-      <Item value="Save" priority="0" />
+      <Item value="Save" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.Api10.BooCommandLineParser">
       <Item value="Parameters" priority="0" />
@@ -439,6 +528,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.IO.Path">
       <Item value="GetFileNameWithoutExtension" priority="0" />
+      <Item value="GetFileName" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:SolutionTransform.XmlFile">
       <Item value="Path" priority="0" />
@@ -453,71 +543,110 @@
     <ItemStatistics item="Qualified:SolutionTransform.Solutions.BaseMergeCommand+BareNameEqualityComparer">
       <Item value="Equals" priority="0" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Exists" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileInfo">
+      <Item value="IsReadOnly" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlElement">
+      <Item value="InnerText" priority="0" />
+      <Item value="SetAttribute" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@SolutionTransform.ProjectFile.ReferenceMapTransform">
+      <Item value="AddReference" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNode">
+      <Item value="SelectSingleNode" priority="0" />
+      <Item value="InnerText" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2+KeyCollection">
+      <Item value="ToArray" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.TransformCommand">
+      <Item value="Process" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@SolutionTransform.Tests.ExampleCsprojFiles">
+      <Item value="ToDocument" priority="0" />
+      <Item value="microKernel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Tests.SolutionRoundTrip+DefaultingFileSystem">
+      <Item value="LoadAsLines" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="EqualTo" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SolutionTransform.Solutions.SolutionChapter">
+      <Item value="Lines" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Guid">
+      <Item value="GetHashCode" priority="0" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
-      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:RenameTests.cs" caret="202" fromTop="8" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:ConvertAssemblyToProject.cs" caret="2136" fromTop="40" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:CompositeCommand.cs" caret="406" fromTop="13" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:FileSystem/f:NonErrorTerminationException.cs" caret="123" fromTop="6" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:FilePath.cs" caret="399" fromTop="7" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:FileSystem/f:IFileSystem.cs" caret="224" fromTop="8" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:FileSystem/f:FileSystem.cs" caret="119" fromTop="6" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:XmlFile.cs" caret="617" fromTop="22" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFileParser.cs" caret="1186" fromTop="22" />
-      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="167" fromTop="6" />
-      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:TargetTests.cs" caret="28228" fromTop="15" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:WithMacro.cs" caret="637" fromTop="14" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:RemoveProjectCommand.cs" caret="150" fromTop="6" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionChapter.cs" caret="116" fromTop="5" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionProject.cs" caret="1941" fromTop="24" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Modify.boo" caret="377" fromTop="12" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="752" fromTop="21" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:CastleSilverlight.boo" caret="332" fromTop="11" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:ReadMe.txt" caret="260" fromTop="8" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2396" fromTop="11" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:SolutionTransformer.cs" caret="2247" fromTop="9" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="380" fromTop="11" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="157" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:AddTarget.cs" caret="859" fromTop="24" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:ChangeFrameworkVersion.cs" caret="1534" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:MergeFromCommand.cs" caret="686" fromTop="21" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Ides.cs" caret="1179" fromTop="28" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:ChangeVisualStudioVersion.cs" caret="453" fromTop="15" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Targets.cs" caret="2432" fromTop="16" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Modify.boo" caret="594" fromTop="17" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Define.boo" caret="563" fromTop="13" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:AddDefineConstant.cs" caret="1109" fromTop="14" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:DefineConstantTransform.cs" caret="507" fromTop="10" />
+      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="438" fromTop="15" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:BaseMergeCommand.cs" caret="1589" fromTop="9" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:TargetTests.cs" caret="28031" fromTop="19" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:Program.cs" caret="4050" fromTop="15" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:QuickTests.cs" caret="1424" fromTop="25" />
       <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:TextReaderHelper.cs" caret="1217" fromTop="27" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="1894" fromTop="16" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Option.cs" caret="679" fromTop="19" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:CommandLineParser.cs" caret="1190" fromTop="16" />
-      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:QuickTests.cs" caret="210" fromTop="9" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="764" fromTop="12" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:Program.cs" caret="2543" fromTop="13" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="3276" fromTop="14" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:FakeFileSystem.cs" caret="214" fromTop="9" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Files/f:FilePath.cs" caret="3764" fromTop="34" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:ProjectFile/f:NameTransform.cs" caret="1034" fromTop="18" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:SolutionTransformer.cs" caret="2073" fromTop="14" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Model/f:IRename.cs" caret="183" fromTop="6" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionChapter.cs" caret="174" fromTop="5" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="5010" fromTop="11" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="1669" fromTop="11" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:RenameTests.cs" caret="381" fromTop="13" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFileParser.cs" caret="4829" fromTop="18" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionProject.cs" caret="4391" fromTop="34" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="2179" fromTop="25" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="550" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="204" fromTop="10" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:SolutionTransformer.cs" caret="3367" fromTop="26" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="815" fromTop="22" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1931" fromTop="17" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1751" fromTop="27" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2740" fromTop="29" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2662" fromTop="12" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="3865" fromTop="11" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:CommandLineParser.cs" caret="4187" fromTop="21" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:CommandLineParser.cs" caret="4464" fromTop="27" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:ReadMe.txt" caret="123" fromTop="5" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:ReadMe.txt" caret="260" fromTop="8" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="229" fromTop="11" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="471" fromTop="16" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1430" fromTop="17" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1288" fromTop="21" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="424" fromTop="11" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="544" fromTop="15" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="740" fromTop="19" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="1896" fromTop="20" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SyncFromCommand.cs" caret="2441" fromTop="18" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="7714" fromTop="15" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="456" fromTop="15" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="162" fromTop="6" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Sync.boo" caret="380" fromTop="11" />
-      <File id="644CD592-1D91-4F41-B3D1-F79E985C4E16/f:Merge.boo" caret="172" fromTop="7" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="3969" fromTop="12" />
-      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:QuickTests.cs" caret="551" fromTop="16" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="1844" fromTop="18" />
-      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="1032" fromTop="18" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:Program.cs" caret="3393" fromTop="18" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/f:Program.cs" caret="3009" fromTop="15" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:QuickTests.cs" caret="1424" fromTop="25" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:FakeFileSystem.cs" caret="787" fromTop="20" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:FakeFileSystem.cs" caret="960" fromTop="26" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:FakeFileSystem.cs" caret="1142" fromTop="19" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:FakeFileSystem.cs" caret="1321" fromTop="25" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="30920" fromTop="27" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:FakeFileSystem.cs" caret="320" fromTop="10" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="6863" fromTop="24" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="6668" fromTop="17" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="4936" fromTop="13" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="5587" fromTop="16" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="5497" fromTop="15" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="5745" fromTop="22" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="3964" fromTop="15" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="3747" fromTop="11" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:Api.cs" caret="4298" fromTop="17" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Files/f:FilePath.cs" caret="4034" fromTop="27" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="4084" fromTop="14" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="5869" fromTop="25" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="6585" fromTop="20" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="5350" fromTop="15" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:SolutionRoundTrip.cs" caret="6519" fromTop="22" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionFile.cs" caret="1367" fromTop="13" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionProject.cs" caret="4602" fromTop="27" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="1603" fromTop="10" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Api10/f:StandardRename.cs" caret="1669" fromTop="11" />
+      <File id="0095CABE-FD77-485A-8FF1-DF6B0E7C5823/f:RenameTests.cs" caret="637" fromTop="19" />
+      <File id="F37F9843-2A33-48A4-8D90-81277E0FBAC8/d:Solutions/f:SolutionProject.cs" caret="4476" fromTop="14" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>

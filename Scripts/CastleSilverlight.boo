@@ -1,14 +1,13 @@
-﻿import SolutionTransform.Api10.Api
+﻿import SolutionTransform.Api10
 
 solution as object
 with api10:
 	_Parameters(
-		_Solution("s|solution=", "solution", "The solution to be transformed to silverlight")
+		_Solution("solution", "The solution to be transformed to silverlight")
 	)
 	solution.Transform(
 		_StandardRename(),
-		_DontFilter(), 
-		_Silverlight30Transform(),
+		_Target("Silverlight30"),
 		_RebaseAssemblies(solution),
 		_ChangeOutputPaths("""build\silverlight30""")
 		# ,StandardTransforms.CastleStandardsTransform()

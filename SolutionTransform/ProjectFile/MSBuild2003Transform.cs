@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using SolutionTransform.Model;
 
 namespace SolutionTransform.ProjectFile
@@ -85,5 +86,20 @@ namespace SolutionTransform.ProjectFile
 		{
 			node.ParentNode.RemoveChild(node);
 		}
+
+	    protected XmlNodeList GetAssemblyReferences(XmlDocument document)
+	    {
+	        return document.SelectNodes("/*//x:Reference[@Include]", namespaces);
+	    }
+
+	    protected XmlNode GetRootPropertyGroup(XmlDocument document)
+	    {
+	        var rootPropertyGroup = document.SelectSingleNode("/*/x:PropertyGroup[not(@Condition)]", namespaces);
+	        if (rootPropertyGroup == null)
+	        {
+	            throw new Exception("Couldn't find root property group.");
+	        }
+	        return rootPropertyGroup;
+	    }
 	}
 }

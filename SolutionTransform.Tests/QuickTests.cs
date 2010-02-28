@@ -47,9 +47,35 @@ namespace SolutionTransform.Tests {
         public void CastleSilverlight()
         {
             Program.Main(new [] { 
-                "Modify",     
+                "CastleSilverlight",     
                 "--solution", 
-                @":\OSS3\Castle IoC\InversionOfControl\src\InversionOfControl-vs2008.sln", 
+                @"C:\OSS3\Castle IoC\InversionOfControl\src\InversionOfControl-vs2008.sln", 
+                "--rename",
+                "-SL"
+            });
+        }
+
+        public void VS2010() {
+            Program.Main(new[] { 
+                "Retarget",     
+                "--solution", 
+                @"C:\OSS3\Castle IoC\InversionOfControl\src\InversionOfControl-vs2008.sln", 
+                "--ide",
+                "vs2010",
+                "--target",
+                "dotnet40",
+                "--rename",
+                "-VS2010"
+            });
+        }
+
+        public void AddDefine() {
+            Program.Main(new[] { 
+                "Define",     
+                "--solution", 
+                @"C:\OSS3\Castle IoC\InversionOfControl\src\InversionOfControl-vs2008.sln", 
+                "--add",
+                "TestDefine",
             });
         }
     }

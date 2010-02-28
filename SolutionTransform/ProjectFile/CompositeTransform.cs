@@ -20,7 +20,7 @@ namespace SolutionTransform.ProjectFile
 	using System.Linq;
 	using System.Xml;
 
-	public class CompositeTransform : ITransform
+	internal class CompositeTransform : ITransform
 	{
 		private readonly List<ITransform> transforms;
 

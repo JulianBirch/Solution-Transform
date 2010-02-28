@@ -42,21 +42,19 @@ namespace SolutionTransform.Api10
             static Action<IDictionary<string, object>, IEnumerable<string>> ToParse(string key, bool isList, Func<string, TResult> evaluate)
             {
                 return (store, values) => {
-                                          foreach (var v in values)
-                                          {
-                                              var value = evaluate(v);
-                                              if (isList) {
-                                                  var list = store.ContainsKey(key)
-                                                                 ? (List<TResult>)store[key]
-                                                                 : (List<TResult>)(store[key] = new List<TResult>());
-                                                  list.Add(value);
-                                              } else {
-                                                  store[key] = value;
-                                              }
-                                          }
+                      foreach (var v in values)
+                      {
+                          var value = evaluate(v);
+                          if (isList) {
+                              var list = store.ContainsKey(key)
+                                             ? (List<TResult>)store[key]
+                                             : (List<TResult>)(store[key] = new List<TResult>());
+                              list.Add(value);
+                          } else {
+                              store[key] = value;
+                          }
+                      }
                 };
-                
-                
             }
         }
 
@@ -95,19 +93,29 @@ namespace SolutionTransform.Api10
             return new ApiOption<SolutionTransformer>(name, true, description, OptionType.MultipleValues, GetSolutionFile);
         }
 
-        private static SolutionTransformer GetSolutionFile(string path) {
-            var parser = new SolutionFileParser(new FileSystem());
+        private SolutionTransformer GetSolutionFile(string path) {
+            var parser = new SolutionFileParser(fileSystem);
             var filePath = new FilePath(path, false);
-            return new SolutionTransformer(parser.Parse(filePath, filePath.FileContent().AsLines()));
+            return new SolutionTransformer(parser.Parse(filePath, fileSystem.LoadAsLines(filePath)));
         }
 
         public IRename StandardRename()
         {
             return standardRename;
         }
+
         public IRename StandardRename(string replacement)
         {
             return new StandardRename(replacement);
+        }
+
+        public static ISolutionCommand Ide(string ide)
+        {
+            return Ides.Ide(ide);
+        }
+
+        public static ISolutionCommand Target(string target) {
+            return new TransformCommand(Targets.Target(target));
         }
 
         public IProjectFilter DontFilter()
@@ -115,66 +123,30 @@ namespace SolutionTransform.Api10
             return new DontFilter();
         }
 
-        public ITransform RebaseAssemblies(SolutionTransformer transformer, params string[] relativePaths)
+        public ISolutionCommand RebaseAssemblies(SolutionTransformer transformer, params string[] relativePaths)
         {
             if (relativePaths.Length == 0)
             {
                 if (assemblyPaths.Count == 0)
                 {
                     // No reference assembly paths specified.  Do nothing
-                    return new NullTransform();
+                    return new NullCommand();
                 }
                 relativePaths = assemblyPaths.ToArray();
             }
-            return new RebaseAssemblies(transformer.BasePath, relativePaths);
+            return new TransformCommand(new RebaseAssemblies(transformer.BasePath, relativePaths));
         }
 
-
-        public ITransform ChangeOutputPaths(string relativeOutputPath)
+        public ISolutionCommand ChangeOutputPaths(string relativeOutputPath)
         {
-            return new ChangeOutputPaths(new FilePath(relativeOutputPath, true, false));
+            return new TransformCommand(relativeOutputPath == null 
+                ? (ITransform) new NullTransform()
+                : new ChangeOutputPaths(new FilePath(relativeOutputPath, true, false)));
         }
 
-        public ITransform Silverlight30Transform()
-        {
-            return new CompositeTransform(
-                new MainSolutionTransform(),
-                RemoveFlavourTargetsAndDefines(),
-                new AddDefineConstant("SILVERLIGHT"),
-                new AddTarget(Silverlight30Target),
-                new ReferenceMapTransform
-                    {
-                        { "System", "mscorlib", "system" },
-                        { "System.Data" },
-                        { "System.Data.DataSetExtensions" },
-                        { "System.Web" },
-                        { "System.Configuration" },
-                        { "System.Runtime.Remoting" },
-                    },
-                new LocalizeGACedReferences()
-                );
-        }
-
-        static readonly string Silverlight30Target = @"$(MSBuildExtensionsPath32)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets";
-        static readonly string CsharpTarget = @"(MSBuildToolsPath)\Microsoft.CSharp.targets";
         private IRename standardRename = new StandardRename("-Modified");
         private List<string> assemblyPaths = new List<string>();
-
-        public ITransform RemoveFlavourTargetsAndDefines()
-        {
-            return new CompositeTransform(
-                new RemoveDefineConstant("DOTNET35"),
-                new RemoveDefineConstant("SILVERLIGHT"),
-                new RemoveTarget("Microsoft.Silverlight.CSharp.targets"),
-                new RemoveTarget("Microsoft.CSharp.targets")
-                );
-        }
-
-        public ITransform CastleStandardsTransform()
-        {
-            return new StandardizeTransform(new CastleStandardizer());
-        }
-
+        
         public ISolutionCommand Modify(List<string> toAdd, List<string> toRemove)
         {
             toAdd = toAdd ?? new List<string>();
@@ -185,6 +157,17 @@ namespace SolutionTransform.Api10
                     toRemove.Select(r => (ISolutionCommand) new RemoveProjectCommand(r))
                 );
             return new CompositeCommand(commands.ToList());
+        }
+
+        public ISolutionCommand Define(List<string> toAdd, List<string> toRemove) {
+            toAdd = toAdd ?? new List<string>();
+            toRemove = toRemove ?? new List<string>();
+
+            var transforms = toAdd.Select(a => (ITransform)new AddDefineConstant(a))
+                .Union(
+                    toRemove.Select(r => (ITransform)new RemoveDefineConstant(r))
+                );
+            return new TransformCommand(new CompositeTransform(transforms.ToList()));
         }
 
         public ISolutionCommand SyncFrom(SolutionTransformer solutionFrom)

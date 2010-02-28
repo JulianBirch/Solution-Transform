@@ -16,12 +16,11 @@ namespace SolutionTransform.Api10
             this.solutionFile = solutionFile;
         }
 
-        public void Transform(IRename rename, params object[] commands) {
-            
-        }
-
-        public void Transform(IRename rename, ISolutionCommand solutionCommand) {
+        public void Transform(IRename rename, params ISolutionCommand[] solutionCommands) {
             var originalProjects = solutionFile.Projects.ToList();
+            var solutionCommand = solutionCommands.Length == 1
+                ? solutionCommands[0]
+                : new CompositeCommand(solutionCommands);
             solutionCommand.Process(solutionFile);
 
             SynchronizeProjectReferences(solutionFile.Projects, originalProjects);
@@ -79,14 +78,6 @@ namespace SolutionTransform.Api10
             if (System.IO.File.Exists(fromWithExtension)) {
                 System.IO.File.Copy(fromWithExtension, toWithExtension, true);
             }
-        }
-
-        public void Transform(IRename rename, IProjectFilter filter, ITransform transform) {
-            Transform(rename, new TransformCommand(filter, transform));
-        }
-
-        public void Transform(IRename rename, IProjectFilter filter, params ITransform[] transforms) {
-            Transform(rename, filter, new CompositeTransform(transforms));
         }
 
         internal FilePath BasePath

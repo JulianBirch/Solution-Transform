@@ -511,10 +511,9 @@ namespace SolutionTransform.Tests {
 
         public void CanRemoveTargets()
         {
-            var fileSystem = new FakeFileSystem();
             var document = new XmlDocument();
             document.LoadXml(this.iocTests);
-            var remove = new Api(null, fileSystem).RemoveFlavourTargetsAndDefines();
+            var remove = Targets.RemoveFlavourTargetsAndDefines();
             remove.ApplyTransform(new XmlFile(document));
             Assert.IsFalse(document.OuterXml.Contains(".targets"), "Targets were not removed.");
         }

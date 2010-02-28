@@ -12,6 +12,10 @@ namespace SolutionTransform.Solutions {
         List<SolutionChapter> chapters;
 
         public SolutionFile(FilePath solutionPath, IFileSystem fileSystem, IEnumerable<string> preamble, IEnumerable<SolutionChapter> chapters) {
+            if (solutionPath == null)
+            {
+                throw new ArgumentNullException("solutionPath");
+            }
             this.solutionPath = solutionPath;
             this.fileSystem = fileSystem;
             this.preamble = preamble.ToList();
@@ -25,7 +29,11 @@ namespace SolutionTransform.Solutions {
         public IEnumerable<string> Lines() {
             var result = new List<string>();
             result.AddRange(preamble);
-            result.AddRange(chapters.SelectMany(c => c.Lines()));
+            result.AddRange(Projects.SelectMany(c => c.Lines()));
+            result.AddRange(from c in chapters
+                            where !(c is SolutionProject)
+                            from l in c.Lines()
+                            select l);
             if (!string.IsNullOrEmpty(result[0]))
             {
                 result.Insert(0, string.Empty);
@@ -41,6 +49,12 @@ namespace SolutionTransform.Solutions {
 
         public FilePath FullPath {
             get { return solutionPath; }
+        }
+
+        public IEnumerable<string> Preamble
+        {
+            get { return preamble; }
+            set { preamble = value.ToList(); }
         }
 
         public void Remove(SolutionProject project) {

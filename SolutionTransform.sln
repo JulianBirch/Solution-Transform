@@ -12,16 +12,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{741DBCAE-131
 		Lib\Boo.Lang.Parser.dll = Lib\Boo.Lang.Parser.dll
 		Lib\Boo.Lang.PatternMatching.dll = Lib\Boo.Lang.PatternMatching.dll
 		Lib\Boo.Lang.Useful.dll = Lib\Boo.Lang.Useful.dll
-		Lib\NDesk.Options.dll = Lib\NDesk.Options.dll
 		Lib\nunit.framework.dll = Lib\nunit.framework.dll
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{644CD592-1D91-4F41-B3D1-F79E985C4E16}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\CastleSilverlight.boo = Scripts\CastleSilverlight.boo
-		Merge.boo = Merge.boo
-		Modify.boo = Modify.boo
-		Sync.boo = Sync.boo
+		Scripts\Define.boo = Scripts\Define.boo
+		Scripts\Merge.boo = Scripts\Merge.boo
+		Scripts\Modify.boo = Scripts\Modify.boo
+		Scripts\Retarget.boo = Scripts\Retarget.boo
+		Scripts\Sync.boo = Scripts\Sync.boo
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionTransform.Tests", "SolutionTransform.Tests\SolutionTransform.Tests.csproj", "{0095CABE-FD77-485A-8FF1-DF6B0E7C5823}"

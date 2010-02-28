@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeFileSystem.cs" />
     <Compile Include="QuickTests.cs" />
     <Compile Include="RenameTests.cs" />
     <Compile Include="SolutionRoundTrip.cs" />

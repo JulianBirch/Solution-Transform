@@ -1,8 +1,6 @@
 using System.IO;
-using System.Text.RegularExpressions;
-using SolutionTransform.Model;
 
-namespace SolutionTransform.Api10
+namespace SolutionTransform.Model
 {
     public class StandardRename : IRename {
         private readonly string delimiter;
@@ -26,10 +24,16 @@ namespace SolutionTransform.Api10
             }
         }
 
+        internal static string GetFileNameWithoutExtension(string name)
+        {
+            var file = Path.GetFileName(name);
+            int index = file.LastIndexOf('.');
+            return index < 0 ? file : file.Substring(0, index);
+        }
 
         public string RenameCsproj(string csproj)
         {
-            string name = Path.GetFileNameWithoutExtension(csproj);
+            string name = GetFileNameWithoutExtension(csproj);
             string newFileName = string.Concat(
                 RenameProjectName(name)
                 ,Path.GetExtension(csproj))
@@ -43,12 +47,13 @@ namespace SolutionTransform.Api10
         }
 
         public string RenameSolutionProjectName(string name) {
-            return RenameCsproj(name);
+            var csproj = RenameCsproj(name + ".x");
+            return csproj.Substring(0, csproj.Length-2);
         }
 
         public string RenameProjectName(string name)
         {
-            int index = name.IndexOf(delimiter);
+            int index = name.LastIndexOf(delimiter);
             return string.Concat(
                 index < 0 ? name : name.Substring(0, index)
                 , string.IsNullOrEmpty(replacement) ? "" : delimiter

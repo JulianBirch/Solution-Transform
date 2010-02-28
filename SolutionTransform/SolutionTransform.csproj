@@ -78,8 +78,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api10\Ides.cs" />
     <Compile Include="Api10\IOption.cs" />
     <Compile Include="Api10\Option.cs" />
+    <Compile Include="Api10\Targets.cs" />
     <Compile Include="Api10\WithMacro.cs" />
     <Compile Include="CodingStandards\CastleStandardizer.cs" />
     <Compile Include="CodingStandards\IStandardizer.cs" />
@@ -95,7 +97,9 @@
     <Compile Include="ProjectFile\AddDefineConstant.cs" />
     <Compile Include="ProjectFile\AddTarget.cs" />
     <Compile Include="ProjectFile\AltDotNetTransform.cs" />
+    <Compile Include="ProjectFile\ChangeFrameworkVersion.cs" />
     <Compile Include="ProjectFile\ChangeOutputPaths.cs" />
+    <Compile Include="ProjectFile\ChangeVisualStudioVersion.cs" />
     <Compile Include="ProjectFile\ConvertAssemblyToProject.cs" />
     <Compile Include="ProjectFile\ConvertProjectToAssembly.cs" />
     <Compile Include="ProjectFile\DefineConstantTransform.cs" />
@@ -115,11 +119,13 @@
     <Compile Include="ProjectFile\RemoveDefineConstant.cs" />
     <Compile Include="ProjectFile\RemoveTarget.cs" />
     <Compile Include="Api10\RegexFilter.cs" />
+    <Compile Include="Solutions\BaseMergeCommand.cs" />
     <Compile Include="Solutions\CompositeCommand.cs" />
     <Compile Include="Solutions\ExcludeCommand.cs" />
     <Compile Include="Api10\SolutionTransformer.cs" />
     <Compile Include="Solutions\GlobalSection.cs" />
     <Compile Include="Solutions\ISolutionCommand.cs" />
+    <Compile Include="Solutions\MergeFromCommand.cs" />
     <Compile Include="Solutions\RemoveProjectCommand.cs" />
     <Compile Include="Solutions\SolutionChapter.cs" />
     <Compile Include="Solutions\SolutionFile.cs" />
@@ -129,7 +135,7 @@
     <Compile Include="Solutions\SyncFromCommand.cs" />
     <Compile Include="Solutions\TransformCommand.cs" />
     <Compile Include="Api10\DontFilter.cs" />
-    <Compile Include="Api10\StandardRename.cs" />
+    <Compile Include="Model\StandardRename.cs" />
     <Compile Include="XmlFile.cs" />
     <Compile Include="Api10\Api.cs" />
     <Compile Include="TextReaderHelper.cs" />

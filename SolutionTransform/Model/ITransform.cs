@@ -14,7 +14,7 @@
 
 namespace SolutionTransform.Model
 {
-    public interface ITransform
+    internal interface ITransform
     {
         void ApplyTransform(XmlFile xmlFile);
     }

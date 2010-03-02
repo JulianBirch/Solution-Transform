@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using SolutionTransform.Model;
 
 namespace SolutionTransform.Solutions
 {
@@ -27,12 +28,13 @@ namespace SolutionTransform.Solutions
     }
 
     public class RemoveProjectCommand : ISolutionCommand {
-        private readonly string projectFileName;
         private readonly string projectName;
 
         public RemoveProjectCommand(string projectFileName) {
-            this.projectFileName = projectFileName;
-            projectName = Path.GetFileNameWithoutExtension(projectFileName);
+            var comparer = StringComparison.InvariantCultureIgnoreCase;
+            projectName = projectFileName.EndsWith(".csproj", comparer)
+                ? StandardRename.GetFileNameWithoutExtension(projectFileName)
+                : projectFileName;
         }
 
 

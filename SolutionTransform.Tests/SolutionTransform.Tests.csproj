@@ -65,7 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsprojDefaultingFileSystem.cs" />
     <Compile Include="FakeFileSystem.cs" />
+    <Compile Include="ModifyDelete.cs" />
     <Compile Include="QuickTests.cs" />
     <Compile Include="RenameTests.cs" />
     <Compile Include="SolutionRoundTrip.cs" />

@@ -85,21 +85,10 @@ EndGlobal
             Assert.IsNotNull(solution.Globals.SolutionConfigurationPlatforms);
         }
 
-        class DefaultingFileSystem : FakeFileSystem
-        {
-            public override XmlDocument LoadAsDocument(FilePath filePath) {
-                if (projects.ContainsKey(filePath))
-                {
-                    return base.LoadAsDocument(filePath);
-                }
-                return ExampleCsprojFiles.ToDocument(ExampleCsprojFiles.microKernel);
-            }
-        }
-
         [Test]
         public void SyncBackDoesntDuplicate()
         {
-            var fileSystem = new DefaultingFileSystem();
+            var fileSystem = new CsprojDefaultingFileSystem();
             string solutionFileName = @"C:\Projects\MicroKernel.sln";
             var filePath = new FilePath(solutionFileName, false);
             var originalLines = iocSolutionJan2010.AsLines();

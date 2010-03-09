@@ -1,5 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartArguments>Sync --fromSolution C:\Projects\Interfaces\Connectivity\FixJunction-Modified.sln --toSolution C:\Projects\Interfaces\Connectivity\FixJunction.sln --rename ""  -- Modify --solution C:\Projects\Interfaces\Connectivity\FixJunction.sln --add "C:\Projects\IOM\JILIOM\JILIOMLib\JILiomLIB.csproj" -- CastleSilverlight --help --solution "C:\OSS3\Castle IoC\InversionOfControl\src\InversionOfControl-vs2008.sln"</StartArguments>
+    <StartArguments>Modify --solution D:\envision\CastleCor
+e\Castle.Core\Castle.Core-vs2008.sln --remove Castle.Services.Logging.log4netIntegration-vs2008 --remove Castle.Services
+.Logging.NLogIntegration-vs2008</StartArguments>
   </PropertyGroup>
 </Project>

@@ -132,7 +132,7 @@ namespace SolutionTransform.Solutions
 
         public bool Equals(SolutionProject other)
         {
-            return other.Id == Id;
+			return other != null && other.Id == Id;
         }
 
         public override bool Equals(object obj) {

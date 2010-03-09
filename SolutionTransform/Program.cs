@@ -89,6 +89,16 @@ namespace SolutionTransform {
 
         private static int ExecuteScript(IFileSystem fileSystem, string[] args)
 	    {
+			if (fileSystem == null)
+			{
+				throw new ArgumentNullException("No file system was provided.", "fileSystem");
+			}
+			if (args == null) {
+				throw new ArgumentNullException("No args were provided.", "args");
+			}
+			if (args[0] == null) {
+				throw new ArgumentNullException("First argument should not be null.", "args[0]");
+			}
 	        try
 	        {
 	            var interpreter = new Boo.Lang.Interpreter.InteractiveInterpreter2();
@@ -106,9 +116,13 @@ namespace SolutionTransform {
 	                context = interpreter.Eval(script);
 	            } catch(TargetInvocationException ex)
 	            {
-	                throw ex.InnerException;
+	            	if (ex.InnerException == null)
+					{
+						throw ex.InnerException;
+					}
+	            	throw;
 	            }
-	            foreach (var e in context.Errors)
+	        	foreach (var e in context.Errors)
 	            {
 	                Console.WriteLine(e.ToString());
 	            }

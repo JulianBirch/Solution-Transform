@@ -18,14 +18,13 @@ namespace SolutionTransform.ProjectFile
 
         public override void DoApplyTransform(XmlFile xmlFile)
         {
-            // TODO: Centralize path hacking logic
             foreach (XmlElement hintPath in xmlFile.Document.SelectNodes("//x:HintPath", namespaces))
             {
                 var fileName = Path.GetFileName(hintPath.InnerText);
                 var directory = absolutePaths.FirstOrDefault(p => File.Exists(p.File(fileName).Path));
                 if (directory == null)
                 {
-                    var error = string.Format("Couldn't rebase {0}.", hintPath.InnerText);
+                    var error = string.Format("Couldn't rebase {0}.\nReference was in ({1})", hintPath.InnerText, xmlFile.Path.Path);
                     var comment = hintPath.OwnerDocument.CreateComment(error);
                     Console.WriteLine(error);
                     hintPath.ParentNode.AppendChild(comment);

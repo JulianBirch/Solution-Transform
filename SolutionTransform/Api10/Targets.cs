@@ -37,6 +37,7 @@ namespace SolutionTransform.Api10 {
                         { "System.Web" },
                         { "System.Configuration" },
                         { "System.Runtime.Remoting" },
+						{ "adodb" },
                     },
                 new LocalizeGACedReferences()  // NUnit won't work without this
                 );

@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
+
 namespace SolutionTransform
 {
 	using System.Collections.Generic;
@@ -35,6 +37,10 @@ namespace SolutionTransform
 
 		public static string FileContent(this FilePath path)
 		{
+			if (path == null)
+			{
+				throw new ArgumentNullException("path");
+			}
 			using (var stream = new StreamReader(path.Path)) {
 				return stream.ReadToEnd();
 			}

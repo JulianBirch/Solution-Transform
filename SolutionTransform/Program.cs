@@ -53,7 +53,7 @@ namespace SolutionTransform {
             var parent = path.Parent;
             if (parent == null)
             {
-                return null;
+				throw new FileNotFoundException(string.Format("Couldn't find a script called {0}.", file));
             }
             return FindScript(parent, file);
 	    }

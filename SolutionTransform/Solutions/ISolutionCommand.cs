@@ -1,10 +1,13 @@
 using System;
+using SolutionTransform.Model;
 
 namespace SolutionTransform.Solutions
 {
     public interface ISolutionCommand
     {
         void Process(SolutionFile solutionFile);
+
+    	ISolutionCommand Restrict(IProjectFilter projectFilter);
     }
 
     public class NullCommand : ISolutionCommand
@@ -13,5 +16,10 @@ namespace SolutionTransform.Solutions
         {
             // Nothing
         }
+
+    	public ISolutionCommand Restrict(IProjectFilter projectFilter)
+    	{
+    		return this;  // Nothing needs doing, it's restricted enough
+    	}
     }
 }

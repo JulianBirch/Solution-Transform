@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsprojDefaultingFileSystem.cs" />
+    <Compile Include="ExampleCsprojFiles.cs" />
+    <Compile Include="ExampleSolutionFiles.cs" />
     <Compile Include="FakeFileSystem.cs" />
     <Compile Include="ModifyDelete.cs" />
     <Compile Include="QuickTests.cs" />

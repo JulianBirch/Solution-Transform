@@ -44,7 +44,7 @@ namespace SolutionTransform.Api10
 
         void ApplyTransform(ITransform transform)
         {
-            var command = new TransformCommand(new DontFilter(), transform);
+            var command = Api.TransformCommand(transform);
             command.Process(solutionFile);
         }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SolutionTransform.Model;
 using SolutionTransform.ProjectFile;
 
 namespace SolutionTransform.Solutions
@@ -17,6 +18,10 @@ namespace SolutionTransform.Solutions
                 toSolution.Add(project);
             }
         }
+
+		public override ISolutionCommand Restrict(IProjectFilter projectFilter) {
+			throw new System.NotSupportedException("The MergeFrom command cannot be restricted.");
+		}
     }
 
     class ChangeVisualStudioVersionCommand : ISolutionCommand
@@ -34,7 +39,12 @@ namespace SolutionTransform.Solutions
         public void Process(SolutionFile solutionFile)
         {
             solutionFile.Preamble = preamble;
-            new TransformCommand(transform).Process(solutionFile);
+            new PerProjectCommand((s, p) => transform.ApplyTransform(p.XmlFile));
         }
+
+    	public ISolutionCommand Restrict(IProjectFilter projectFilter)
+    	{
+    		throw new System.NotSupportedException("You can't convert only part of a solution to a different version of Visual Studio.");
+    	}
     }
 }

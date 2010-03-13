@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SolutionTransform.Model;
 
 namespace SolutionTransform.Solutions {
     class SyncFromCommand : BaseMergeCommand {
@@ -9,9 +10,13 @@ namespace SolutionTransform.Solutions {
         {
         }
 
-        
 
-        protected override void ProcessSolution(SolutionFile toSolution, Reconciliation<SolutionProject> reconciliation)
+    	public override ISolutionCommand Restrict(IProjectFilter projectFilter)
+    	{
+    		throw new System.NotSupportedException("The SyncFrom command cannot be restricted.");
+    	}
+
+    	protected override void ProcessSolution(SolutionFile toSolution, Reconciliation<SolutionProject> reconciliation)
         {
             foreach (var projectPair in reconciliation.Matched) {
                 toSolution.Remove(projectPair.Key);

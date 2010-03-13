@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using SolutionTransform.Model;
 
 namespace SolutionTransform.Solutions
 {
@@ -18,5 +20,10 @@ namespace SolutionTransform.Solutions
                 command.Process(solutionFile);
             }
         }
+
+    	public ISolutionCommand Restrict(IProjectFilter projectFilter)
+    	{
+    		return new CompositeCommand(underlying.Select(c => c.Restrict(projectFilter)));
+    	}
     }
 }

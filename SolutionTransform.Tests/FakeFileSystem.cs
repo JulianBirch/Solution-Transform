@@ -14,17 +14,20 @@ namespace SolutionTransform.Tests
         {
             Assert.That(!filePath.IsDirectory, "File path must point to a file.");
             Assert.That(filePath.IsAbsolute, "File path must be absolute.");
+			
         }
 
         public virtual IEnumerable<string> LoadAsLines(FilePath filePath)
         {
             CheckFilePath(filePath);
+			Assert.That(solutions.ContainsKey(filePath), string.Format("There wasn't a solution at {0}", filePath.Path));
             return solutions[filePath];
         }
 
         public virtual XmlDocument LoadAsDocument(FilePath filePath)
         {
             CheckFilePath(filePath);
+			Assert.That(projects.ContainsKey(filePath), string.Format("There wasn't an XML file at {0}", filePath.Path));
             return projects[filePath];
         }
 

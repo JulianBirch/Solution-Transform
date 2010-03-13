@@ -30,8 +30,6 @@ namespace SolutionTransform.Api10
         private readonly BooCommandLineParser commandLineParser;
         private readonly IFileSystem fileSystem;
 
-
-
         class ApiOption<TResult> : Option<IDictionary<string, object>>
         {
             public ApiOption(string name, bool isRequired, string description, OptionType optionType, Func<string, TResult> evaluate) : base(name, isRequired, optionType, description, ToParse(name, optionType == Api10.OptionType.MultipleValues, evaluate))
@@ -115,7 +113,7 @@ namespace SolutionTransform.Api10
         }
 
         public static ISolutionCommand Target(string target) {
-            return new TransformCommand(Targets.Target(target));
+            return TransformCommand(Targets.Target(target));
         }
 
         public IProjectFilter DontFilter()
@@ -134,15 +132,36 @@ namespace SolutionTransform.Api10
                 }
                 relativePaths = assemblyPaths.ToArray();
             }
-            return new TransformCommand(new RebaseAssemblies(transformer.BasePath, relativePaths));
+            return TransformCommand(new RebaseAssemblies(transformer.BasePath, relativePaths));
         }
+
+		public ISolutionCommand Restrict(ISolutionCommand command, IEnumerable<string> projects)
+		{
+			return command.Restrict(new BareNameFilter(projects));
+		}
+
+		public ISolutionCommand RemoveAssemblies(IEnumerable<string> names)
+		{
+			var transform = new ReferenceMapTransform();
+			foreach (var name in names)
+			{
+				transform.Add(name);
+			}
+			return TransformCommand(transform);
+		}
 
         public ISolutionCommand ChangeOutputPaths(string relativeOutputPath)
         {
-            return new TransformCommand(relativeOutputPath == null 
+            return TransformCommand(relativeOutputPath == null 
                 ? (ITransform) new NullTransform()
                 : new ChangeOutputPaths(new FilePath(relativeOutputPath, true, false)));
         }
+
+		static internal ISolutionCommand TransformCommand(ITransform transform)
+		{
+			return new PerProjectCommand((s, p) => transform.ApplyTransform(p.XmlFile));
+			
+		}
 
         private IRename standardRename = new StandardRename("-Modified");
         private List<string> assemblyPaths = new List<string>();
@@ -152,10 +171,9 @@ namespace SolutionTransform.Api10
             toAdd = toAdd ?? new List<string>();
             toRemove = toRemove ?? new List<string>();
 
-            var commands = toAdd.Select(a => (ISolutionCommand)new AddProjectCommand(a, fileSystem))
-                .Union(
-                    toRemove.Select(r => (ISolutionCommand) new RemoveProjectCommand(r))
-                );
+            var commands = toAdd.Select(a => (ISolutionCommand)new AddProjectCommand(a, fileSystem)).ToList();
+        	var remove = new PerProjectCommand(new BareNameFilter(toRemove), (s, p) => s.Remove(p));
+        	commands.Add(remove);
             return new CompositeCommand(commands.ToList());
         }
 
@@ -167,7 +185,7 @@ namespace SolutionTransform.Api10
                 .Union(
                     toRemove.Select(r => (ITransform)new RemoveDefineConstant(r))
                 );
-            return new TransformCommand(new CompositeTransform(transforms.ToList()));
+            return TransformCommand(new CompositeTransform(transforms.ToList()));
         }
 
         public ISolutionCommand SyncFrom(SolutionTransformer solutionFrom)

@@ -25,30 +25,12 @@ namespace SolutionTransform.Solutions
             // It would be nicer if we could figure out the type by reading the destination file.
             solutionFile.Add(project);
         }
+
+    	public ISolutionCommand Restrict(IProjectFilter projectFilter)
+    	{
+    		throw new System.NotSupportedException("The add project command cannot be restricted.");
+    	}
     }
 
-    public class RemoveProjectCommand : ISolutionCommand {
-        private readonly string projectName;
-
-        public RemoveProjectCommand(string projectFileName) {
-            var comparer = StringComparison.InvariantCultureIgnoreCase;
-            projectName = projectFileName.EndsWith(".csproj", comparer)
-                ? StandardRename.GetFileNameWithoutExtension(projectFileName)
-                : projectFileName;
-        }
-
-
-        public void Process(SolutionFile solutionFile) {
-            var project = solutionFile.Projects.FirstOrDefault(IsCorrectProject);
-            if (project != null) {
-                solutionFile.Remove(project);
-            }
-        }
-
-        bool IsCorrectProject(SolutionProject project) {
-            return StringComparer.InvariantCultureIgnoreCase.Equals(
-                Path.GetFileNameWithoutExtension(project.Path.Path),
-                projectName);
-        }
-    }
+    
 }

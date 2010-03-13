@@ -25,7 +25,9 @@ namespace SolutionTransform.Solutions
             ProcessSolution(toSolution, reconciliation);
         }
 
-        protected abstract void ProcessSolution(SolutionFile toSolution, Reconciliation<SolutionProject> reconciliation);
+    	public abstract ISolutionCommand Restrict(IProjectFilter projectFilter);
+
+    	protected abstract void ProcessSolution(SolutionFile toSolution, Reconciliation<SolutionProject> reconciliation);
 
         public class BareNameEqualityComparer : IEqualityComparer<SolutionProject> {
             public bool Equals(SolutionProject x, SolutionProject y)
@@ -47,5 +49,7 @@ namespace SolutionTransform.Solutions
                        ? name.Substring(0, index)
                        : name;
         }
+
+		
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,39 +6,42 @@ using System.Text.RegularExpressions;
 using SolutionTransform.Model;
 using SolutionTransform.Solutions;
 
-namespace SolutionTransform
+namespace SolutionTransform.Api10
 {
-    public class RegexFilter : IProjectFilter
-    {
-        private readonly IEnumerable<Regex> patterns;
+	internal class BareNameFilter : IProjectFilter
+	{
+		private readonly IEnumerable<string> projects;
 
-        public RegexFilter(IEnumerable patterns) : this(patterns.Cast<string>())
-        {
+		public BareNameFilter(IEnumerable<string> patterns) 
+		{
+			var comparer = StringComparison.InvariantCultureIgnoreCase;
+			this.projects = patterns.Select(p =>
+					p.EndsWith(".csproj", comparer)
+				? StandardRename.GetFileNameWithoutExtension(p)
+				: p
+				);
             
-        }
+		}
 
-        public RegexFilter(IEnumerable<Regex> patterns)
-        {
-            this.patterns = patterns;
-        }
+		public bool ShouldApply(SolutionProject project)
+		{
+			if (project.IsFolder) {
+				return false;  // Don't touch folders
+			}
+			foreach (var validProject in projects) {
+				if (IsCorrectProject(project, validProject)) {
+					return true;
+				}
+			}
+			return false;
+		}
 
-        public RegexFilter(IEnumerable<string> patterns) 
-            : this(patterns.Select(p => new Regex(Regex.Escape(p), RegexOptions.IgnoreCase)).ToList())
-        {
-            
-        }
+		bool IsCorrectProject(SolutionProject project, string projectName) {
+			return StringComparer.InvariantCultureIgnoreCase.Equals(
+				StandardRename.GetFileNameWithoutExtension(project.Path.Path),
+				projectName);
+		}
+	}
 
-        public bool ShouldApply(SolutionProject project)
-        {
-            if (project.IsFolder) {
-                return true;
-            }
-            foreach (var validProject in patterns) {
-                if (validProject.IsMatch(project.Name)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
+	
 }

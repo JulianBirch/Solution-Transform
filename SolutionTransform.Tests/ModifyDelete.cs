@@ -53,14 +53,46 @@ Global
 	EndGlobalSection
 EndGlobal";
 
+    	
+
+    	
+
+		[Test]
+		public void CanExplicitlyRemoveAReference()
+		{
+			var fileSystem = new CsprojDefaultingFileSystem(ExampleCsprojFiles.dynamicProxyTests);
+			fileSystem.SetSolutionText(
+                                @"D:\envision\CastleCore\Castle.Core\Castle.Core-Modified.sln",
+								ExampleSolutionFiles.strippedCoreSolutionMar2010);
+			Program.Main(fileSystem, new[] { 
+                "ModifyProject",
+                "--solution",
+                @"D:\envision\CastleCore\Castle.Core\Castle.Core-Modified.sln",
+				"--project",
+                "Castle.DynamicProxy.Tests-Modified",
+                "--removeAssembly",
+                "Rhino.Mocks.CPP.Interfaces"
+            });
+
+			var touched =
+				fileSystem.LoadAsDocument(
+					@"D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tests\Castle.DynamicProxy.Tests-Modified.csproj");
+					
+
+			var untouched
+				= fileSystem.LoadAsDocument(
+					@"D:\envision\CastleCore\Castle.Core\src\Castle.Core.Tests\Castle.Core.Tests-Modified.csproj)");
+			Assert.That(untouched.OuterXml, Contains.Substring("Rhino.Mocks.CPP.Interfaces"), "Core tests should still have Rhino Mocks reference.");
+			Assert.IsFalse(touched.OuterXml.Contains("Rhino.Mocks.CPP.Interfaces"), "DynamicProxy tests should not have Rhino Mocks reference.");
+		}
+
+
         [Test]
         public void SyncBackDoesntDuplicate() {
             var fileSystem = new CsprojDefaultingFileSystem();
-            string solutionFileName = @"C:\dev\Castle\git\Core\Castle.Core-vs2008.sln";
-            var filePath = new FilePath(solutionFileName, false);
-            var originalLines = castleCoreWithLogging.AsLines();
-            fileSystem.Save(filePath, originalLines);
-            Program.Main(fileSystem, new[] { 
+			IEnumerable<string> originalLines = fileSystem.SetSolutionText(
+				@"C:\dev\Castle\git\Core\Castle.Core-vs2008.sln", castleCoreWithLogging);
+        	Program.Main(fileSystem, new[] { 
                 "Modify",
                 "--solution",
                 @"C:\dev\Castle\git\Core\Castle.Core-vs2008.sln",
@@ -94,5 +126,7 @@ EndGlobal";
             var projectCount2 = silverlightLines2.Count(x => x == "EndProject");
             Assert.That(projectCount2, Is.EqualTo(originalLines.Count(x => x == "EndProject") - 2));
         }
+
+    	
     }
 }

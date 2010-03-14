@@ -108,7 +108,7 @@ namespace SolutionTransform.ProjectFile
 
 	    protected IEnumerable<XmlElement> GetPropertyGroups(XmlDocument document)
 	    {
-	        return document.SelectSingleNode("/*/x:PropertyGroup[not(@Condition)]", namespaces).Cast<XmlElement>();
+	        return document.SelectNodes("/*/x:PropertyGroup[not(@Condition)]", namespaces).Cast<XmlElement>();
 	    }
 	}
 }

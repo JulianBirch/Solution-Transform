@@ -19,7 +19,7 @@ namespace SolutionTransform.ProjectFile
             root.SetAttribute("ToolsVersion", toolsVersion);
         	foreach (var propertyGroup in GetPropertyGroups(document))
         	{
-        		SetElementIfPresent(propertyGroup, "x:ProductVersion", productVersion);
+        		SetElementIfPresent(propertyGroup, "ProductVersion", productVersion);
         	}
         }
 

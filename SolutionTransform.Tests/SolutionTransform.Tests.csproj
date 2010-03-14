@@ -70,6 +70,7 @@
     <Compile Include="ExampleSolutionFiles.cs" />
     <Compile Include="FakeFileSystem.cs" />
     <Compile Include="ModifyDelete.cs" />
+    <Compile Include="PathTests.cs" />
     <Compile Include="QuickTests.cs" />
     <Compile Include="RenameTests.cs" />
     <Compile Include="SolutionRoundTrip.cs" />

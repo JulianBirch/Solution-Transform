@@ -13,6 +13,8 @@
 // limitations under the License.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using SolutionTransform.Model;
 
 namespace SolutionTransform.ProjectFile
@@ -44,6 +46,19 @@ namespace SolutionTransform.ProjectFile
 
 		public abstract void DoApplyTransform(XmlDocument document);
 
+		protected XmlElement SetElementIfPresent(XmlNode parent, string name, string value)
+		{
+			var element = (XmlElement)parent.SelectSingleNode("x:" + name, namespaces);
+			if (element != null) {
+				element.InnerText = value;
+			}
+			return element;
+		}
+
+		protected XmlElement SetElementIfPresent(XmlNode parent, string name, bool value) {
+			return SetElementIfPresent(parent, name, value ? "true" : "false");
+
+		}
 
 		protected XmlElement SetElement(XmlNode parent, string name, string value)
 		{
@@ -57,7 +72,6 @@ namespace SolutionTransform.ProjectFile
 
 		protected XmlElement SetElement(XmlNode parent, string name, bool value) {
 			return SetElement(parent, name, value ? "true" : "false");
-			
 		}
 
 		protected XmlElement AddElement(XmlNode parent, string name, bool value) {
@@ -92,14 +106,9 @@ namespace SolutionTransform.ProjectFile
 	        return document.SelectNodes("/*//x:Reference[@Include]", namespaces);
 	    }
 
-	    protected XmlNode GetRootPropertyGroup(XmlDocument document)
+	    protected IEnumerable<XmlElement> GetPropertyGroups(XmlDocument document)
 	    {
-	        var rootPropertyGroup = document.SelectSingleNode("/*/x:PropertyGroup[not(@Condition)]", namespaces);
-	        if (rootPropertyGroup == null)
-	        {
-	            throw new Exception("Couldn't find root property group.");
-	        }
-	        return rootPropertyGroup;
+	        return document.SelectSingleNode("/*/x:PropertyGroup[not(@Condition)]", namespaces).Cast<XmlElement>();
 	    }
 	}
 }

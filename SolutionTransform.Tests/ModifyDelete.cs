@@ -127,6 +127,27 @@ EndGlobal";
             Assert.That(projectCount2, Is.EqualTo(originalLines.Count(x => x == "EndProject") - 2));
         }
 
+		[Test]
+		public void ModifyDeleteShouldNotRemoveAllProjectReferences()
+		{
+			var fileSystem = new CsprojDefaultingFileSystem(ExampleCsprojFiles.dynamicProxyTests);
+
+			IEnumerable<string> originalLines = fileSystem.SetSolutionText(
+				@"C:\dev\Castle\git\Core\Castle.Core-vs2008.sln", castleCoreWithLogging);
+			Program.Main(fileSystem, new[] { 
+                "Modify",
+                "--solution",
+                @"C:\dev\Castle\git\Core\Castle.Core-vs2008.sln",
+                "--rename",
+                "-vs2008sl",
+                "--remove",
+                "Castle.Services.Logging.log4netIntegration-vs2008"
+            });
+			var csproj =
+				fileSystem.LoadAsDocument(
+					@"c:\dev\castle\git\core\src\Castle.Core.Tests\Castle.Core.Tests-vs2008sl.csproj");
+			Assert.That(csproj.OuterXml, Contains.Substring("ProjectReference"), "The command incorrectly removed a project reference.");
+		}
     	
     }
 }

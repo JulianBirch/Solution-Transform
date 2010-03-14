@@ -32,7 +32,7 @@ namespace SolutionTransform.ProjectFile
             foreach (XmlElement projectReference in file.Document.SelectNodes("//x:ProjectReference", namespaces)) {
                 var include = new FilePath(projectReference.GetAttribute("Include"), false, false);
                 var absolute = include.ToAbsolutePath(file.Path);
-                if (!project.Equals(absolute.Path)) {
+                if (project.Path.Equals(absolute)) {
                     yield return projectReference;
                 }
             }

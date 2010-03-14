@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SolutionTransform
@@ -11,13 +12,15 @@ namespace SolutionTransform
         private readonly bool isDirectory;
         private readonly bool isAbsolute;
 
-        public FilePath(string path, bool isDirectory) : this(path, isDirectory, path.Contains(":") || path.StartsWith("\\"))
+		public FilePath(string path, bool isDirectory)
+			: this(path, isDirectory, 
+			path.Contains(System.IO.Path.VolumeSeparatorChar) || path.StartsWith(System.IO.Path.PathSeparator.ToString()))
         {
             
         }
         public FilePath(string path, bool isDirectory, bool isAbsolute)
         {
-            this.path = path;
+            this.path = Normalize(path);
             this.isDirectory = isDirectory;
             this.isAbsolute = isAbsolute;
             if (path.EndsWith(".sln") && isDirectory)
@@ -51,7 +54,7 @@ namespace SolutionTransform
             if (!isDirectory) {
                 return Parent.Directory(directoryName);
             }
-            return new FilePath(System.IO.Path.Combine(path, directoryName), true, isAbsolute);
+            return new FilePath(PathCombine(path, directoryName), true, isAbsolute);
         }
 
         public FilePath ToAbsolutePath(FilePath from) {
@@ -63,8 +66,31 @@ namespace SolutionTransform
             {
                 return ToAbsolutePath(from.Parent);
             }
-            return new FilePath(System.IO.Path.Combine(from.Path, this.Path), this.IsDirectory, true);
+            return new FilePath(PathCombine(from.Path, this.Path), this.IsDirectory, true);
         }
+
+		internal static string PathCombine(string path1, string path2)
+		{
+			return System.IO.Path.Combine(path1, path2);
+		}
+
+
+    	internal static string Normalize(string path)
+		{
+			var components = path.Split(System.IO.Path.DirectorySeparatorChar).ToList();
+			for (int index = 0; index < components.Count; index++)
+			{
+				if (components[index] == ".." && index > 0)
+				{
+					components.RemoveRange(index-1, 2);
+					index -= 2;
+				}
+			}
+			return string.Join(System.IO.Path.DirectorySeparatorChar.ToString(), components.ToArray());
+		}
+
+		// a b .. d
+		// a d
 
         public FilePath PathFrom(FilePath from) {
             if (!from.isDirectory)

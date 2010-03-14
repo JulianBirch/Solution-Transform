@@ -12,15 +12,15 @@ namespace SolutionTransform.ProjectFile
             this.toolsVersion = toolsVersion;
             this.productVersion = productVersion;
         }
-
         
         public override void DoApplyTransform(XmlDocument document)
         {
             var root = document.DocumentElement;
             root.SetAttribute("ToolsVersion", toolsVersion);
-            var rootPG = GetRootPropertyGroup(document);
-            var productVersionElement = rootPG.SelectSingleNode("x:ProductVersion", namespaces);
-            productVersionElement.InnerText = productVersion;
+        	foreach (var propertyGroup in GetPropertyGroups(document))
+        	{
+        		SetElementIfPresent(propertyGroup, "x:ProductVersion", productVersion);
+        	}
         }
 
         

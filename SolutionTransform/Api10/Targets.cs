@@ -25,7 +25,7 @@ namespace SolutionTransform.Api10 {
 
         static ITransform Silverlight30Transform() {
             return new CompositeTransform(
-                new MainSolutionTransform(),
+                new MainSilverlight30Transform(),
                 RemoveFlavourTargetsAndDefines(),
                 new AddDefineConstant("SILVERLIGHT"),
                 new AddTarget(Silverlight30Target),

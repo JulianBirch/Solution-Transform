@@ -21,6 +21,7 @@ using SolutionTransform.Model;
 using SolutionTransform.ProjectFile;
 
 using SolutionTransform.Solutions;
+using SolutionTransform.Solutions.Commands;
 using SCIEnumerable = System.Collections.IEnumerable;
 
 namespace SolutionTransform.Api10

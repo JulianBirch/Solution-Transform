@@ -4,6 +4,7 @@ using System.Linq;
 using SolutionTransform.Model;
 using SolutionTransform.ProjectFile;
 using SolutionTransform.Solutions;
+using SolutionTransform.Solutions.Commands;
 
 namespace SolutionTransform.Api10
 {

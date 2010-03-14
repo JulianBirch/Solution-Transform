@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SolutionTransform.Model;
-using SolutionTransform.Solutions;
+using SolutionTransform.Solutions.Commands;
 
 namespace SolutionTransform.Api10 {
     static class Ides {

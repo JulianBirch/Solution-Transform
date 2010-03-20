@@ -12,15 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using Boo.Lang;
-using Boo.Lang.Compiler;
-using SolutionTransform.Api10;
+using System.Text.RegularExpressions;
 using SolutionTransform.Files;
 using SolutionTransform.Scripts;
-using SolutionTransform.Solutions;
 
 [assembly:InternalsVisibleTo("SolutionTransform.Tests")]
 
@@ -28,12 +24,17 @@ namespace SolutionTransform {
 	using System;
 
 	public class Program {
-		internal static int Main(IFileStorage fileSystem, string[] args)
+		internal static int Main(IFileSystem fileSystem, string[] args)
 		{
-			return Main(fileSystem, new LegacyScriptProvider(), args);
+			return Main(fileSystem, ScriptProvider(fileSystem), args);
 		}
 
-		public FilePath ExecutingAssemblyLocation {
+		internal static IScriptProvider ScriptProvider(IFileSystem fileSystem)
+		{
+			return new FileSystemScriptProvider(fileSystem, ExecutingAssemblyLocation.Parent);
+		}
+
+		public static FilePath ExecutingAssemblyLocation {
 			get {
 				var executablePath = Assembly.GetExecutingAssembly().CodeBase;
 				return ToLocal(executablePath);
@@ -41,8 +42,8 @@ namespace SolutionTransform {
 		}
 
 		static FilePath ToLocal(string uriStyle) {
-			string result = uriStyle.Replace("/", "\\");
-			return new FilePath(result.Substring(6), true);
+			var stripPrefix = Regex.Replace(uriStyle, "^file[:]/+", "");
+			return new FilePath(stripPrefix.Replace("/", "\\"), true);
 		}
 
         internal static int Main(IFileStorage fileSystem, IScriptProvider provider,  string[] args)
@@ -58,30 +59,31 @@ namespace SolutionTransform {
                 Console.WriteLine("\t\tSolutionTransform <Script Name or Path> --help");
                 Console.WriteLine("\t\t\tfor script argument help");
                 Console.WriteLine("\t\t\tNote that paths nearly always have to be absolute.");
+				ReportScripts(provider);
                 return 0;
             }
         	var file = provider.FindScript(args[0]);
 			if (file == null)
 			{
 				Console.WriteLine("Could not find script named '{0}'.", args[0]);
-				Console.WriteLine("Valid scripts:");
-				foreach (var script	in provider.AllScripts)
-				{
-					Console.WriteLine("\t{0:20}{1}", script.Name, script.Location);
-				}
+				ReportScripts(provider);
+				return 1;
 			}
-            return file.Execute(args, fileSystem);
+        	return file.Execute(args, fileSystem);
         }
 
-	    public static int Main(string[] args)
+		private static void ReportScripts(IScriptProvider provider)
 		{
-			return Main(new FileSystem(), new LegacyScriptProvider(), args);
+			Console.WriteLine("Valid scripts:");
+			foreach (var script	in provider.AllScripts)
+			{
+				Console.WriteLine("\t{0,-20}\t{1}", script.Name, script.Location);
+			}
 		}
 
-        
-
-	    
-
-	    
+		public static int Main(string[] args)
+		{
+			return Main(new FileSystem(), args);
+		}
 	}
 }

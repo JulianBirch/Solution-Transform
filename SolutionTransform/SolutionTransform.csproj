@@ -120,6 +120,7 @@
     <Compile Include="ProjectFile\RemoveTarget.cs" />
     <Compile Include="Api10\RegexFilter.cs" />
     <Compile Include="Scripts\BooScript.cs" />
+    <Compile Include="Scripts\FileSystemScriptProvider.cs" />
     <Compile Include="Scripts\IScript.cs" />
     <Compile Include="Scripts\IScriptProvider.cs" />
     <Compile Include="Scripts\LegacyScriptProvider.cs" />

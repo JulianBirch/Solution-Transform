@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace SolutionTransform.Files
 {
-	public class FileSystem : IFileStorage
+	public class FileSystem : IFileSystem
 	{
 		public IEnumerable<string> LoadAsLines(FilePath filePath)
 		{
@@ -51,7 +51,6 @@ namespace SolutionTransform.Files
 			document.Save(filePath.Path);
 		}
 
-		/*
 		public IEnumerable<FilePath> Files(FilePath directory)
 		{
 			return Directory.GetFiles(directory.Path).Select(p => directory.File(p));
@@ -61,7 +60,10 @@ namespace SolutionTransform.Files
 		{
 			return Directory.GetDirectories(directory.Path).Select(p => directory.Directory(p));
 		}
-		*/
-		
+
+		public bool Exists(FilePath filePath)
+		{
+			return filePath.IsDirectory ? Directory.Exists(filePath.Path) : File.Exists(filePath.Path);
+		}
 	}
 }

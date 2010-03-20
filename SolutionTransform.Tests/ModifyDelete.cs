@@ -5,7 +5,8 @@ using System.Text;
 using NUnit.Framework;
 
 namespace SolutionTransform.Tests {
-    class ModifyDelete {
+	[TestFixture]
+    public class ModifyDelete {
         string castleCoreWithLogging = @"
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008

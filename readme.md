@@ -1,8 +1,9 @@
 Solution Transform is a tool for scripting modifications to solutions and csproj files in ways that don't break being able to use them in Visual Studio.  At the moment, it can do the following
-* Add and remove projects
-* Merge and Sync solutions
-* Change the .NET version to Silverlight, .NET 3.5 or .NET 4.0
-* Change the IDE from VS2008 to VS2010 and back again.
+
+- Add and remove projects
+- Merge and Sync solutions
+- Change the .NET version to Silverlight, .NET 3.5 or .NET 4.0
+- Change the IDE from VS2008 to VS2010 and back again.
 
 The intention is that you can include this in your build scripts to produce alternative versions of projects.  I'll be adding more standard conversions as required.  I've already got it integrated with 
 the Castle Core Project building .NET 3.5, .NET 4.0 and Silverlight 3.0.
@@ -86,6 +87,7 @@ Modify
 This already has one happy user: me.  It allows you to add or remove projects from a solution.  This isn't quite the same as doing it in Visual Studio.  If you add a project, it automatically updates any assembly references to project references, which is a lot more convenient than Visual Studio's default behaviour.  If you remove a project, it looks up the assembly in the specified directories, rather than the project's output directory.  This is more useful for automated builds.
 
 Example command line syntax:
+
 	SolutionTransform  Modify --solution C:\Projects\Application.sln --add "C:\Projects\Library\ImportantLibrary.csproj"
 
 However, in practice I doubt many people are going to want to add and remove projects on an individual basis.  Usually, you'll want to use Merge or Sync.
@@ -125,9 +127,9 @@ RoadMap
 =======
 
 It does most of the things I can think of as being useful at the moment.  I'm happy to hear suggestions, though.  
+
 * It could do with more tests.
-* The logging should be IoCed rather than writing directly to the console.
-* Silverlight 4.0 is an obvious addition and is probably about five lines of code.  
 * I don't know if any Mono users would find it useful.  Get in touch if you're in this category.
-* Retarget should warn, but not stop, when no IDE or Framework is specified.
-* Create a redistributable build.  Probably ILMerge for ease of distribution.
+* Obviously, check out the [issues list].
+
+[issues list]: http://github.com/JulianBirch/Solution-Transform/issues

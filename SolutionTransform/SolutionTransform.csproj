@@ -119,6 +119,7 @@
     <Compile Include="ProjectFile\RemoveDefineConstant.cs" />
     <Compile Include="ProjectFile\RemoveTarget.cs" />
     <Compile Include="Api10\RegexFilter.cs" />
+    <Compile Include="Scripts\IScriptProvider.cs" />
     <Compile Include="Solutions\Commands\BaseMergeCommand.cs" />
     <Compile Include="Solutions\Commands\CompositeCommand.cs" />
     <Compile Include="Api10\SolutionTransformer.cs" />

@@ -18,6 +18,7 @@ using System.Runtime.CompilerServices;
 using Boo.Lang;
 using Boo.Lang.Compiler;
 using SolutionTransform.Api10;
+using SolutionTransform.Scripts;
 using SolutionTransform.Solutions;
 
 [assembly:InternalsVisibleTo("SolutionTransform.Tests")]
@@ -26,141 +27,48 @@ namespace SolutionTransform {
 	using System;
 
 	public class Program {
-        public static FilePath FullPath(string file)
-        {
-            if (file.Contains("\\"))
-            {
-                if (file.Contains(":"))
-                {
-                    return new FilePath(file, false);
-                }
-                return GetCurrentPath().File(file);
-            }
-            return FindScript(GetCurrentPath(), file);
-        }
+		internal static int Main(IFileSystem fileSystem, string[] args)
+		{
+			return Main(fileSystem, new LegacyScriptProvider(), args);
+		}
 
-	    private static FilePath FindScript(FilePath path, string file)
-	    {
-            var searchPath = path.File(file);
-	        if (File.Exists(searchPath.Path))
-	        {
-                return searchPath;
-	        }
-            searchPath = path.Directory("Scripts").File(file);
-            if (File.Exists(searchPath.Path)) {
-                return searchPath;
-            }
-            var parent = path.Parent;
-            if (parent == null)
-            {
-				throw new FileNotFoundException(string.Format("Couldn't find a script called {0}.", file));
-            }
-            return FindScript(parent, file);
-	    }
-
-	    public static FilePath GetCurrentPath()
+        internal static int Main(IFileSystem fileSystem, IScriptProvider provider,  string[] args)
         {
-            var executablePath = Assembly.GetExecutingAssembly().CodeBase;
-            return ToLocal(Path.GetDirectoryName(executablePath));
-        }
-
-        static FilePath ToLocal(string uriStyle)
-        {
-            string result = uriStyle.Replace("/", "\\");
-            return new FilePath(result.Substring(6), true);
-        }
-
-        public static int Main(IFileSystem fileSystem, string[] args)
-        {
-            if (args.Length == 0) {
+			if (fileSystem == null) {
+				throw new ArgumentNullException("No file system was provided.", "fileSystem");
+			}
+			if (args == null) {
+				throw new ArgumentNullException("No args were provided.", "args");
+			}
+			if (args.Length == 0) {
                 Console.WriteLine("Usage:\tSolutionTransform <Script Name or Path> <Other Arguments>");
                 Console.WriteLine("\t\tSolutionTransform <Script Name or Path> --help");
                 Console.WriteLine("\t\t\tfor script argument help");
                 Console.WriteLine("\t\t\tNote that paths nearly always have to be absolute.");
                 return 0;
             }
-            return ExecuteScript(fileSystem, args);
+        	var file = provider.FindScript(args[0]);
+			if (file == null)
+			{
+				Console.WriteLine("Could not find script named '{0}'.", args[0]);
+				Console.WriteLine("Valid scripts:");
+				foreach (var script	in provider.AllScripts)
+				{
+					Console.WriteLine("\t{0:20}{1}", script.Name, script.Location);
+				}
+			}
+            return file.Execute(args, fileSystem);
         }
 
 	    public static int Main(string[] args)
 		{
-            return Main(new FileSystem(), args);
+			return Main(new FileSystem(), new LegacyScriptProvider(), args);
 		}
 
-        private static int ExecuteScript(IFileSystem fileSystem, string[] args)
-	    {
-			if (fileSystem == null)
-			{
-				throw new ArgumentNullException("No file system was provided.", "fileSystem");
-			}
-			if (args == null) {
-				throw new ArgumentNullException("No args were provided.", "args");
-			}
-			if (args[0] == null) {
-				throw new ArgumentNullException("First argument should not be null.", "args[0]");
-			}
-	        try
-	        {
-	            var interpreter = new Boo.Lang.Interpreter.InteractiveInterpreter2();
-                
-                var parser = new BooCommandLineParser(interpreter, args);
-                var api10 = new Api(parser, fileSystem);
-	            // api10.Parameters();
-                    
-	            interpreter.SetValue("api10", api10);
-                    
-	            string script = GetScriptContents(args[0]);
-	            CompilerContext context;
-	            try
-	            {
-	                context = interpreter.Eval(script);
-	            } catch(TargetInvocationException ex)
-	            {
-	            	if (ex.InnerException == null)
-					{
-						throw ex.InnerException;
-					}
-	            	throw;
-	            }
-	        	foreach (var e in context.Errors)
-	            {
-	                Console.WriteLine(e.ToString());
-	            }
-	            if (context.Errors.Count != 0)
-	            {
-	                return 2;
-	            }
-	        } catch (NonErrorTerminationException)
-	        {
-	            return 0;
-	        }
-	        catch (Exception ex) {
-	            WriteException(Console.Out, ex);
-	            return 1;
-	        }
-	        return 0;
-	    }
+        
 
-	    private static string GetScriptContents(string scriptFile)
-	    {
-	        if (!scriptFile.Contains("."))
-	        {
-	            scriptFile += ".boo";
-	        }
-	        return FullPath(scriptFile).FileContent();
-	    }
+	    
 
-	    static void WriteException(TextWriter writer, Exception ex)
-        {
-            writer.WriteLine(ex.Message);
-            writer.WriteLine();
-            writer.WriteLine(ex.StackTrace);
-            var inner = ex.InnerException;
-            if (inner != null)
-            {
-                writer.WriteLine("======");
-                WriteException(writer, inner);
-            }
-        }
+	    
 	}
 }

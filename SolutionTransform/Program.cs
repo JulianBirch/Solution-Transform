@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
@@ -31,7 +32,9 @@ namespace SolutionTransform {
 
 		internal static IScriptProvider ScriptProvider(IFileSystem fileSystem)
 		{
-			return new FileSystemScriptProvider(fileSystem, ExecutingAssemblyLocation.Parent);
+			return new CompositeScriptProvider(new [] {
+				new FileSystemScriptProvider(fileSystem, ExecutingAssemblyLocation.Parent)
+			});
 		}
 
 		public static FilePath ExecutingAssemblyLocation {
@@ -62,7 +65,7 @@ namespace SolutionTransform {
 				ReportScripts(provider);
                 return 0;
             }
-        	var file = provider.FindScript(args[0]);
+			var file = provider.AllScripts.FirstOrDefault(s => s.Name.Equals(args[0], StringComparison.InvariantCultureIgnoreCase));
 			if (file == null)
 			{
 				Console.WriteLine("Could not find script named '{0}'.", args[0]);

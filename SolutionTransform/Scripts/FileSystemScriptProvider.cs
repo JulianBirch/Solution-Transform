@@ -8,22 +8,7 @@ using SolutionTransform.Model;
 
 namespace SolutionTransform.Scripts
 {
-	
-	internal class ResourceScriptProvider : IScriptProvider
-	{
-		public IScript FindScript(string scriptName)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public IEnumerable<IScript> AllScripts
-		{
-			get { throw new System.NotImplementedException(); }
-		}
-	}
-
 	internal class FileSystemScriptProvider : IScriptProvider
-
 	{
 		private readonly IFileSystem fileSystem;
 		private readonly FilePath currentDirectory;
@@ -34,76 +19,17 @@ namespace SolutionTransform.Scripts
 			this.currentDirectory = currentDirectory;
 		}
 
-		public IScript FindScript(string scriptName)
-		{
-			if (scriptName == null) {
-				throw new ArgumentNullException(@"Script Name should not be null.", "scriptName");
-			}
-			var scriptFile = scriptName.Contains(".") ? scriptName : scriptName + ".boo";
-			var fullPath = FullPath(scriptFile);
-			if (fullPath == null)
-			{
-				return null;  // Couldn't find a script
-			}
-
-			return GetScript(fullPath);
-		}
-
-		public FilePath FullPath(string file) {
-			if (file.Contains("\\")) {
-				if (file.Contains(":")) {
-					return new FilePath(file, false);
-				}
-				return currentDirectory.File(file);
-			}
-			return FindScript(currentDirectory, file);
-		}
-
-		private FilePath FindScript(FilePath path, string file) {
-			var searchPath = path.File(file);
-			
-			if (fileSystem.Exists(searchPath)) {
-				return searchPath;
-			}
-			searchPath = path.Directory("Scripts").File(file);
-			if (fileSystem.Exists(searchPath)) {
-				return searchPath;
-			}
-			var parent = path.Parent;
-			if (parent == null) {
-				return null; 
-			}
-			return FindScript(parent, file);
-		}
-
-		IEnumerable<IScript> AllScriptsRaw
-		{
-			get
-			{
-				return Parents(currentDirectory)
-					.SelectMany(f => {
-		                 	var scripts = f.Directory("Scripts");
-		                 	return fileSystem.Exists(scripts)
-		                 	       	? ScriptsForPath(f).Union(ScriptsForPath(scripts))
-		                 	       	: ScriptsForPath(f);
-						}
-					);
-			}
-		}
-
 		public IEnumerable<IScript> AllScripts
 		{
 			get {
-				HashSet<string> encounteredNames = new HashSet<string>(new string[0], StringComparer.InvariantCultureIgnoreCase);
-				foreach (var script in AllScriptsRaw)
-				{
-					if (encounteredNames.Contains(script.Name))
-					{
-						continue;
+				return Parents(currentDirectory)
+					.SelectMany(f => {
+						var scripts = f.Directory("Scripts");
+						return fileSystem.Exists(scripts)
+								? ScriptsForPath(f).Union(ScriptsForPath(scripts))
+								: ScriptsForPath(f);
 					}
-					yield return script;
-					encounteredNames.Add(script.Name);
-				}
+					);
 			}
 		}
 

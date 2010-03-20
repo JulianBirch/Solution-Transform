@@ -90,7 +90,7 @@
     <Compile Include="Api10\DontRename.cs" />
     <Compile Include="Api10\CommandLineParser.cs" />
     <Compile Include="Files\FileSystem.cs" />
-    <Compile Include="Files\IFileSystem.cs" />
+    <Compile Include="Files\IFileStorage.cs" />
     <Compile Include="Files\NonErrorTerminationException.cs" />
     <Compile Include="Model\IProjectFilter.cs" />
     <Compile Include="Model\IRename.cs" />
@@ -119,7 +119,10 @@
     <Compile Include="ProjectFile\RemoveDefineConstant.cs" />
     <Compile Include="ProjectFile\RemoveTarget.cs" />
     <Compile Include="Api10\RegexFilter.cs" />
+    <Compile Include="Scripts\BooScript.cs" />
+    <Compile Include="Scripts\IScript.cs" />
     <Compile Include="Scripts\IScriptProvider.cs" />
+    <Compile Include="Scripts\LegacyScriptProvider.cs" />
     <Compile Include="Solutions\Commands\BaseMergeCommand.cs" />
     <Compile Include="Solutions\Commands\CompositeCommand.cs" />
     <Compile Include="Api10\SolutionTransformer.cs" />

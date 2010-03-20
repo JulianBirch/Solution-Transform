@@ -18,6 +18,7 @@ using System.Runtime.CompilerServices;
 using Boo.Lang;
 using Boo.Lang.Compiler;
 using SolutionTransform.Api10;
+using SolutionTransform.Files;
 using SolutionTransform.Scripts;
 using SolutionTransform.Solutions;
 
@@ -27,12 +28,24 @@ namespace SolutionTransform {
 	using System;
 
 	public class Program {
-		internal static int Main(IFileSystem fileSystem, string[] args)
+		internal static int Main(IFileStorage fileSystem, string[] args)
 		{
 			return Main(fileSystem, new LegacyScriptProvider(), args);
 		}
 
-        internal static int Main(IFileSystem fileSystem, IScriptProvider provider,  string[] args)
+		public FilePath ExecutingAssemblyLocation {
+			get {
+				var executablePath = Assembly.GetExecutingAssembly().CodeBase;
+				return ToLocal(executablePath);
+			}
+		}
+
+		static FilePath ToLocal(string uriStyle) {
+			string result = uriStyle.Replace("/", "\\");
+			return new FilePath(result.Substring(6), true);
+		}
+
+        internal static int Main(IFileStorage fileSystem, IScriptProvider provider,  string[] args)
         {
 			if (fileSystem == null) {
 				throw new ArgumentNullException("No file system was provided.", "fileSystem");

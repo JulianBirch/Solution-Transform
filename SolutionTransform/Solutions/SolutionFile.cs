@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using SolutionTransform.Files;
 
 namespace SolutionTransform.Solutions {
     public class SolutionFile {
         private readonly FilePath solutionPath;
-        private readonly IFileSystem fileSystem;
+        private readonly IFileStorage fileSystem;
         List<string> preamble;
         List<SolutionChapter> chapters;
 
-        public SolutionFile(FilePath solutionPath, IFileSystem fileSystem, IEnumerable<string> preamble, IEnumerable<SolutionChapter> chapters) {
+        public SolutionFile(FilePath solutionPath, IFileStorage fileSystem, IEnumerable<string> preamble, IEnumerable<SolutionChapter> chapters) {
             if (solutionPath == null)
             {
                 throw new ArgumentNullException("solutionPath");

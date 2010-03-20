@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using NUnit.Framework;
+using SolutionTransform.Files;
 
 namespace SolutionTransform.Tests
 {
-    class FakeFileSystem : IFileSystem
+    class FakeFileSystem : IFileStorage
     {
         protected Dictionary<FilePath, IEnumerable<string>> solutions = new Dictionary<FilePath, IEnumerable<string>>();
         protected Dictionary<FilePath, XmlDocument> projects = new Dictionary<FilePath, XmlDocument>();

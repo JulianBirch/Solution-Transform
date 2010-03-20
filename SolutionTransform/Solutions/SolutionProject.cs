@@ -14,6 +14,7 @@
 
 using System.IO;
 using System.Xml;
+using SolutionTransform.Files;
 using SolutionTransform.ProjectFile;
 
 namespace SolutionTransform.Solutions
@@ -27,7 +28,7 @@ namespace SolutionTransform.Solutions
         private XmlFile xmlFile;
 		private Guid id;
 
-        public SolutionProject(string start, string end, FilePath basePath, IFileSystem fileSystem) : base(start, end) {
+        public SolutionProject(string start, string end, FilePath basePath, IFileStorage fileSystem) : base(start, end) {
 			var components = start.Split('"');
 			type = new Guid(components[1]);
 			name = components[3];
@@ -36,7 +37,7 @@ namespace SolutionTransform.Solutions
 			id = new Guid(components[7]);
 		}
 
-        public SolutionProject(FilePath relativePath, FilePath basePath, Guid projectType, IFileSystem fileSystem)
+        public SolutionProject(FilePath relativePath, FilePath basePath, Guid projectType, IFileStorage fileSystem)
             : base("", "EndProject")
         {
             this.type = projectType;

@@ -1,15 +1,16 @@
 using System.IO;
 using System.Xml;
+using SolutionTransform.Files;
 
 namespace SolutionTransform
 {
     public class XmlFile
     {
         private readonly FilePath filePath;
-        private readonly IFileSystem fileSystem;
+        private readonly IFileStorage fileSystem;
         XmlDocument document;
 
-        public XmlFile(FilePath filePath, IFileSystem fileSystem)
+        public XmlFile(FilePath filePath, IFileStorage fileSystem)
         {
             this.filePath = filePath;
             this.fileSystem = fileSystem;

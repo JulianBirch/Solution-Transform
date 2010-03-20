@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using SolutionTransform.Files;
 
 namespace SolutionTransform.Solutions {
     public class SolutionFileParser {
-        private readonly IFileSystem fileSystem;
+        private readonly IFileStorage fileSystem;
 
-        public SolutionFileParser(IFileSystem fileSystem)
+        public SolutionFileParser(IFileStorage fileSystem)
         {
             this.fileSystem = fileSystem;
         }

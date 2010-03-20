@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Boo.Lang.Interpreter;
 using SolutionTransform.CodingStandards;
+using SolutionTransform.Files;
 using SolutionTransform.Model;
 using SolutionTransform.ProjectFile;
 
@@ -29,7 +30,7 @@ namespace SolutionTransform.Api10
     public class Api 
     {
         private readonly BooCommandLineParser commandLineParser;
-        private readonly IFileSystem fileSystem;
+        private readonly IFileStorage fileSystem;
 
         class ApiOption<TResult> : Option<IDictionary<string, object>>
         {
@@ -57,7 +58,7 @@ namespace SolutionTransform.Api10
             }
         }
 
-        public Api(BooCommandLineParser commandLineParser, IFileSystem fileSystem)
+        public Api(BooCommandLineParser commandLineParser, IFileStorage fileSystem)
         {
             this.commandLineParser = commandLineParser;
             this.fileSystem = fileSystem;

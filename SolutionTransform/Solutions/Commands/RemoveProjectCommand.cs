@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using SolutionTransform.Files;
 using SolutionTransform.Model;
 using SolutionTransform.Solutions.Commands;
 
@@ -8,10 +9,10 @@ namespace SolutionTransform.Solutions.Commands
 {
 	public class AddProjectCommand : ISolutionCommand {
 		private string projectFileName;
-		private readonly IFileSystem fileSystem;
+		private readonly IFileStorage fileSystem;
 		FilePath absolutePath;
 
-		public AddProjectCommand(string projectFileName, IFileSystem fileSystem)
+		public AddProjectCommand(string projectFileName, IFileStorage fileSystem)
 		{
 			this.projectFileName = projectFileName;
 			this.fileSystem = fileSystem;

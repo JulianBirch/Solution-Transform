@@ -32,7 +32,8 @@ namespace SolutionTransform {
 
 		internal static IScriptProvider ScriptProvider(IFileSystem fileSystem)
 		{
-			return new CompositeScriptProvider(new [] {
+			return new CompositeScriptProvider(new IScriptProvider[] {
+				new ResourceScriptProvider(Assembly.GetExecutingAssembly()),
 				new FileSystemScriptProvider(fileSystem, ExecutingAssemblyLocation.Parent)
 			});
 		}

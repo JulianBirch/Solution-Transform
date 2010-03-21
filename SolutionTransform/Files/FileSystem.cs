@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,7 +54,14 @@ namespace SolutionTransform.Files
 
 		public IEnumerable<FilePath> Files(FilePath directory)
 		{
-			return Directory.GetFiles(directory.Path).Select(p => directory.File(p));
+			try
+			{
+				return Directory.GetFiles(directory.Path).Select(p => directory.File(p));
+			} catch (UnauthorizedAccessException)
+			{
+				return Enumerable.Empty<FilePath>();
+			}
+			
 		}
 
 		public IEnumerable<FilePath> Folders(FilePath directory)
@@ -63,7 +71,10 @@ namespace SolutionTransform.Files
 
 		public bool Exists(FilePath filePath)
 		{
-			return filePath.IsDirectory ? Directory.Exists(filePath.Path) : File.Exists(filePath.Path);
+			var path = filePath.Path;
+			return filePath.IsDirectory
+				? Directory.Exists(path)
+				: File.Exists(path);
 		}
 	}
 }

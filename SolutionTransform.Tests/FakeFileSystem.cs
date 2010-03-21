@@ -75,6 +75,12 @@ namespace SolutionTransform.Tests
 
     	public bool Exists(FilePath filePath)
     	{
+			if (filePath.Path.EndsWith(".boo", StringComparison.InvariantCultureIgnoreCase)
+				|| filePath.Path.EndsWith("Scripts", StringComparison.InvariantCultureIgnoreCase)
+				)
+			{
+				throw new System.NotImplementedException("The Fake File System object does not support boo scripts.  If you've hit here, it means it failed to find a script in the resource script provider.");
+			}
     		throw new System.NotImplementedException();
     	}
     }

@@ -1,3 +1,5 @@
+### Please note that this is something of a historical artifact now.  Microsoft have now fixed most (but not quite all) of the problems that Solution Transform solved and it's no longer actively maintained.  I'm leaving it up on the off-chance that the code is useful for someone trying to understand the sln and csproj formats.  I'd recommend ripping off the code in preference to actually getting the existing tool up and working.
+
 Solution Transform is a tool for scripting modifications to solutions and csproj files in ways that don't break being able to use them in Visual Studio.  At the moment, it can do the following
 
 - Add and remove projects
